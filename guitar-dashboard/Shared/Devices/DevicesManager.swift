@@ -12,7 +12,7 @@ class DevicesManager: DeviceManagerProtocol {
     private let libraryModels: [LibraryModel]
     var libraries: [Library] = []
     let midiFactory: MidiFactory?
-    var fractalDevice: FractalDevice? = nil
+    var axeFx3Device: FractalDevice? = nil
     var pedalBoard: Pedalboard? = nil
     let logger: Logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "DevicesManager")
     
@@ -30,7 +30,7 @@ class DevicesManager: DeviceManagerProtocol {
         }
         if let uwMidiFactory = midiFactory {
             let deviceName = "Axe-Fx III"
-            fractalDevice = FractalDevice(midiFactory: uwMidiFactory, deviceName: deviceName)
+            axeFx3Device = FractalDevice(midiFactory: uwMidiFactory, deviceName: deviceName)
             logger.log("device \(deviceName) created")
             DIContainer.shared.register(type: MidiFactoryProtocol.self, component: uwMidiFactory)
             
@@ -43,6 +43,16 @@ class DevicesManager: DeviceManagerProtocol {
         
         for libMode in libraryModels {
             self.libraries.append(Library(libMode, self))
+        }
+    }
+    
+    func send (patch: Patch) {
+        if let uwAxeFx3Device = self.axeFx3Device, let uwAxeFx3Patch = patch.axeFx3 {
+            do {
+                try uwAxeFx3Device.send(programScene: uwAxeFx3Patch)
+            } catch {
+                logger.warning("Unable to send patch to AxeFx3 device")                
+            }
         }
     }
 }

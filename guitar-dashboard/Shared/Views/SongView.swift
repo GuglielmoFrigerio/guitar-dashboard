@@ -19,7 +19,7 @@ struct SongView: View {
     var body: some View {
         List() {
             ForEach(song.patches, id: \.self) { patch in
-                PatchView(index: patch.index, name: patch.name, selectedPatch: self.$selected)
+                PatchView(patch: patch, selectedPatch: self.$selected)
             }
         }
         .navigationTitle(song.name)
@@ -27,7 +27,7 @@ struct SongView: View {
             self.selected! += 1
         }
         .onChange(of: selected) { value in
-            print("selected \(value!)")
+            self.song.selectPatch(index: value!)
         }
    }
     

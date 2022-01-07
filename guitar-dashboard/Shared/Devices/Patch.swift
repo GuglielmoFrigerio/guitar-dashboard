@@ -13,9 +13,11 @@ struct Patch: Hashable, Identifiable {
     var axeFx3: ProgramScene?
     let id = UUID()
     let index: Int
-    
-    init(_ patchModel: PatchModel, index: Int) {
+    private let deviceManager: DeviceManagerProtocol
+
+    init(_ patchModel: PatchModel, index: Int, deviceManager: DeviceManagerProtocol) {
         self.index = index
+        self.deviceManager = deviceManager
         if let uwName = patchModel.name {
             self.name = uwName
         } else {
@@ -35,5 +37,9 @@ struct Patch: Hashable, Identifiable {
 
     func hash(into hasher: inout Hasher) {
         hasher.combine(index)
+    }
+    
+    func select() {
+        self.deviceManager.send(patch: self)
     }
 }

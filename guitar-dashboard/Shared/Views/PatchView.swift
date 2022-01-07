@@ -9,21 +9,20 @@ import Foundation
 import SwiftUI
 
 struct PatchView: View {
-    var index: Int
-    var name: String
+    let patch: Patch
     @Binding var selectedPatch: Int?
     
     var body: some View {
         HStack {
-            Text(name)
+            Text(patch.name)
             Spacer()
-            if index == selectedPatch {
+            if patch.index == selectedPatch {
                 Image(systemName: "checkmark")
                     .foregroundColor(.accentColor)
             }
         }
         .onTapGesture {
-            self.selectedPatch = index
+            self.selectedPatch = patch.index
         }
     }
 }

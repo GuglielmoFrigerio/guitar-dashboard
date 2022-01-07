@@ -10,4 +10,6 @@ import Foundation
 protocol DeviceManagerProtocol {
     var libraries: [Library] { get }
     
+    func send(patch: Patch)
+    
 }

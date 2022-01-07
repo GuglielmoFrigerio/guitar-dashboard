@@ -18,7 +18,7 @@ struct Song: Hashable {
         
         var index = 0
         for patchModel in songModel.patches {
-            patches.append(Patch(patchModel, index: index))
+            patches.append(Patch(patchModel, index: index, deviceManager: deviceManager))
             index += 1
         }
     }
@@ -29,5 +29,9 @@ struct Song: Hashable {
 
     func hash(into hasher: inout Hasher) {
         hasher.combine(name)
+    }
+    
+    func selectPatch(index: Int) {
+        self.patches[index].select()
     }
 }
