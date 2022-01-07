@@ -1,0 +1,257 @@
+<AxeFxII>
+  <Library name="Nursery Cryme">
+    <Patches name="The Musical Box">
+      <Track name="01 - The Musical Box.flac">
+      </Track>
+      <Patch>467</Patch>
+      <Patch>468</Patch>
+      <Patch>465</Patch>
+    </Patches>
+  </Library>
+  <Library name="Foxtrot">
+    <Patches name="Watcher Of The Skies">
+      <Track name="Watcher Of The Skies.mp3">
+        <Marker>00:01:27</Marker>
+        <Marker>00:03:04</Marker>
+        <Marker>00:05:47</Marker>
+      </Track>
+      <Patch>460</Patch>
+      <Patch>461</Patch>
+      <Patch>462</Patch>
+    </Patches>
+  </Library>
+  <Library name="Selling England by the Pound">
+    <Patches name="Dancing with the Moonlit Knight" >
+      <Track name="Dancing With The Moonlight Knight (2008 - Remaster).mp3">
+        <Marker>00:01:14</Marker>
+        <Marker>00:01:57</Marker>
+        <Marker>00:02:28</Marker>
+        <Marker>00:05:06</Marker>
+      </Track>
+      <Patch name="Intro">456</Patch>
+      <Patch scene="1" name="Tapping">457</Patch>
+      <Patch scene="2" name="Pitch 24">457</Patch>
+      <Patch scene="3" name="Pitch 12">457</Patch>
+      <Patch scene="4">457</Patch>
+      <Patch scene="5">457</Patch>
+      <Patch scene="1">459</Patch>
+      <Patch>456</Patch>
+      <Patch name="" >458</Patch>
+    </Patches>
+    <Patches name="Firth of Fifth">
+      <Track name="Firth Of Fifth - Genesis.mp3">
+        <Marker>00:01:08</Marker>
+        <Marker>00:05:08</Marker>
+        <Marker>00:05:40</Marker>
+      </Track>
+      <Patch name="Intro">509</Patch>
+      <Patch name="Acoustic">470</Patch>
+      <Patch name="Reprise">509</Patch>
+      <Patch name="Slide">471</Patch>
+      <Patch name="Trillo">509</Patch>
+      <Patch name="Solo">472</Patch>
+      <Patch name="Finale">509</Patch>
+    </Patches>
+  </Library>
+  <Library name="The Lamb Lies Down">
+    <Patches name="The Lamia" >
+      <Track name="The Lamia - Genesis.mp3">
+        <Marker>00:05:24</Marker>
+      </Track>
+      <Patch>463</Patch>
+      <Patch>464</Patch>
+      <Patch>466</Patch>
+      <Patch>465</Patch>
+    </Patches>
+  </Library>
+  <Library name="Agosto 2021">
+    <Patches name="Get'em Out By Friday" >
+      <Track name="Get 'Em Out By Friday.mp3">
+      </Track>
+      <Patch scene="1" name="Intro">507</Patch>
+      <Patch scene="2" name="Intro Diatonic 1">507</Patch>
+      <Patch scene="3" name="Intro Diatonic 2">507</Patch>
+      <Patch scene="5" name="La-Re-Mi">000</Patch>
+      <!--<Patch scene="2" name="Arpeggio1">099</Patch>-->
+      <Patch scene="1" name="Arpeggio1">389</Patch>
+      <Patch scene="4" name="Crescendo">454</Patch>
+      <Patch scene="1" name="La">409</Patch>
+      <Patch scene="1" name="Arpeggio1">389</Patch>
+      <Patch scene="1" name="La">409</Patch>
+      <Patch scene="1" name="Arpeggio1">389</Patch>
+      <Patch scene="4" name="Crescendo">454</Patch>
+      <!-- <Patch scene="1" name="Solo">401</Patch> -->
+      <Patch scene="4" name="Solo">194</Patch>
+      <Patch scene="1" name="NotineSilenziose">003</Patch>
+      <Patch scene="2" name="FadeBridgeIn">002</Patch>
+      <Patch scene="1" name="NotineSilenziose">003</Patch>
+      <Patch scene="2" name="Slide">331</Patch>
+      <Patch scene="1" name="NotineSilenziose">003</Patch>
+      <Patch scene="1" name="Arpeggio1">389</Patch>
+      <Patch scene="5" name="LaReMiSi">502</Patch>
+      <Patch scene="2" name="ArpFinale">003</Patch>
+
+    </Patches>
+    <Patches name="Can Utility" >
+      <Track name="Can-Utility and the Coastliners.mp3">
+        <Marker>00:04:30</Marker>
+        <Marker>00:05:25</Marker>
+      </Track>
+      <Patch scene="1" name="Intro">491</Patch>
+      <Patch scene="1" name="Re min">503</Patch>
+      <Patch scene="2" name="SIb+ Do+ Envelope ">503</Patch>
+      <Patch scene="1" name="Strumming">503</Patch>
+      <Patch scene="1" name="Solo Intro">398</Patch>
+      <Patch scene="2" name="Solo">398</Patch>
+      <Patch scene="1" name="Envelope">398</Patch>
+      <Patch scene="2" name="Bridge">398</Patch>
+      <Patch scene="1" name="Envelope">398</Patch>
+      <Patch scene="2" name="Finale">398</Patch>
+    </Patches>
+    <Patches name="The Lamia" >
+      <Track name="The Lamia - Genesis.mp3">
+      </Track>
+      <Patch scene="1" name="Arpeggio 1">095</Patch>
+      <Patch scene="2" name="Arpeggio 2">464</Patch>
+      <Patch scene="1" name="Envelope">464</Patch>
+      <Patch scene="1" name="Arpeggio 1">095</Patch>
+      <Patch scene="2" name="Arpeggio 2">464</Patch>
+      <Patch scene="1" name="Envelope">464</Patch>
+      <Patch scene="1" name="Slide">466</Patch>
+      <Patch scene="8" name="Solo">484</Patch>
+    </Patches>
+    <Patches name="The Chamber of 32 Doors" >
+      <Track name="The Chamber of 32 Doors - Genesis.mp3">
+      </Track>
+      <Patch scene="6" name="Into (Si)">486</Patch>
+      <Patch scene="1" name="Strumming">099</Patch>
+      <Patch scene="6" name="Into">486</Patch>
+      <Patch scene="1" name="Strumming">099</Patch>
+    </Patches>
+    <Patches name="Anyway" >
+      <Track name="Anyway - Genesis.mp3">
+      </Track>
+      <Patch scene="6" name="Sol">485</Patch>
+      <Patch scene="7" name="Enfasi">485</Patch>
+      <Patch scene="1" name="Solo">476</Patch>
+    </Patches>
+    <Patches name="CuckooCocoon">
+      <Track name="Genesis - Cuckoo Cocoon.mp3">
+      </Track>
+      <Patch name="Intro cupo">497</Patch>
+      <Patch scene="2" name="Cuckoon">492</Patch>
+    </Patches>
+    <Patches name="Watcher Of The Skies">
+      <Track name="Watcher Of The Skies.mp3">
+        <Marker>00:01:27</Marker>
+        <Marker>00:03:04</Marker>
+        <Marker>00:05:47</Marker>
+      </Track>
+      <Patch scene="1" name="base crescendo">460</Patch>
+      <Patch scene="2" name="solo">460</Patch>
+      <Patch scene="1" name="base">460</Patch>
+      <Patch name="envelope (Sol# - Fa)">462</Patch>
+      <Patch scene="1" name="base">460</Patch>
+      <Patch scene="2" name="solo">460</Patch>
+      <Patch scene="1" name="base">460</Patch>
+      <Patch scene="8" name="envelope">462</Patch>
+    </Patches>
+    <Patches name="Dancing with the Moonlit Knight" >
+      <Track name="Dancing With The Moonlight Knight (2008 - Remaster).mp3">
+        <Marker>00:01:14</Marker>
+        <Marker>00:01:57</Marker>
+        <Marker>00:02:28</Marker>
+        <Marker>00:05:10</Marker>
+      </Track>
+      <Patch scene="1" name="Intro">456</Patch>
+      <Patch scene="1" name="Tapping">457</Patch>
+      <Patch scene="2" name="Pitch 24">457</Patch>
+      <Patch scene="3" name="Pitch 12">457</Patch>
+      <Patch scene="4" name="Envelope">457</Patch>
+      <Patch scene="5" name="Env Clean">457</Patch>
+      <Patch scene="1">459</Patch>
+      <Patch scene="1">456</Patch>
+      <Patch name="" >458</Patch>
+    </Patches>
+    <Patches name="Dancing 110" >
+      <Track name="Dancing 110.mp3">
+        <Marker>00:02:47</Marker>
+        <Marker>00:05:35</Marker>
+      </Track>
+      <Patch scene="1" name="Intro">456</Patch>
+      <Patch scene="1" name="Tapping">457</Patch>
+      <Patch scene="2" name="Pitch 24">457</Patch>
+      <Patch scene="3" name="Pitch 12">457</Patch>
+      <Patch scene="4" name="Envelope">457</Patch>
+      <Patch scene="5" name="Env Clean">457</Patch>
+      <Patch scene="1">459</Patch>
+      <Patch scene="1">456</Patch>
+      <Patch name="" >458</Patch>
+    </Patches>
+    <Patches name="Dancing 100" >
+      <Track name="Dancing 100.mp3">
+        <Marker>00:03:04</Marker>
+        <Marker>00:06:08</Marker>
+      </Track>
+      <Patch scene="1" name="Intro">456</Patch>
+      <Patch scene="1" name="Tapping">457</Patch>
+      <Patch scene="2" name="Pitch 24">457</Patch>
+      <Patch scene="3" name="Pitch 12">457</Patch>
+      <Patch scene="4" name="Envelope">457</Patch>
+      <Patch scene="5" name="Env Clean">457</Patch>
+      <Patch scene="1">459</Patch>
+      <Patch scene="1">456</Patch>
+      <Patch name="" >458</Patch>
+    </Patches>
+    <Patches name="Firth of Fifth">
+      <Track name="Firth Of Fifth - Genesis.mp3">
+        <Marker>00:01:08</Marker>
+        <Marker>00:05:08</Marker>
+        <Marker>00:05:40</Marker>
+      </Track>
+      <Patch scene="1" name="Intro">509</Patch>
+      <Patch scene="8" name="Acoustic">470</Patch>
+      <Patch scene="2" name="Reprise">509</Patch>
+      <Patch scene="8" name="Acoustic">470</Patch>
+      <Patch scene="1" name="Intro">509</Patch>
+      <Patch scene="1" name="Slide">471</Patch>
+      <Patch name="Trillo">509</Patch>
+      <Patch name="Solo">472</Patch>
+      <Patch name="Finale">509</Patch>
+    </Patches>
+    <Patches name="The Musical Box">
+      <Track name="01 - The Musical Box.flac">
+      </Track>
+      <Patch>467</Patch>
+      <Patch>468</Patch>
+      <Patch>465</Patch>
+    </Patches>
+    <Patches name="The Return of the Gian Hogweed">
+      <Track name="The Return Of The Giant Hogweed.flac">
+      </Track>
+      <Patch name="intro" scene="1">475</Patch>
+      <Patch name="-12" scene="2">508</Patch>
+      <Patch name="+12" scene="3">508</Patch>
+      <Patch name="Stacco" scene="4">508</Patch>
+      <Patch name="Clean" scene="5">508</Patch>
+      <Patch name="Dist" scene="4">508</Patch>
+      <Patch name="Clean" scene="5">508</Patch>
+      <Patch name="-12" scene="2">508</Patch>
+      <Patch name="+12" scene="3">508</Patch>
+      <Patch name="Stacco" scene="4">508</Patch>
+      <Patch name="Clean" scene="5">508</Patch>
+      <Patch name="Dist" scene="4">508</Patch>
+      <Patch name="Clean" scene="5">508</Patch>
+      <Patch name="Solo con Flauto" scene="8">450</Patch>
+      <Patch name="+12" scene="3">508</Patch>
+      <Patch name="Dist" scene="4">508</Patch>
+      <Patch name="Clean" scene="5">508</Patch>
+      <Patch name="SoloReverb" scene="1">451</Patch>
+      <Patch name="SoloReverbDiat" scene="2">451</Patch>
+      <Patch name="TapPicking" scene="3">451</Patch>
+      <Patch name="2nd" scene="4">451</Patch>
+      <Patch name="Finale" scene="1">395</Patch>
+    </Patches>
+  </Library>
+
+</AxeFxII>

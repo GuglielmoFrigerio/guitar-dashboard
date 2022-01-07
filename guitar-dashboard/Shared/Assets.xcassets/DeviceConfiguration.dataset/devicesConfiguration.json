@@ -1,0 +1,1446 @@
+{
+  "name": null,
+  "libraries": [
+    {
+      "name": "Nursery Cryme",
+      "songs": [
+        {
+          "name": "The Musical Box",
+          "track": {
+            "name": "01 - The Musical Box.flac",
+            "markers": []
+          },
+          "patches": [
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 467,
+                "scene": 0
+              }
+            },
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 468,
+                "scene": 0
+              }
+            },
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 465,
+                "scene": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Foxtrot",
+      "songs": [
+        {
+          "name": "Watcher Of The Skies",
+          "track": {
+            "name": "Watcher Of The Skies.mp3",
+            "markers": [
+              {
+                "name": null,
+                "position": "00:01:27"
+              },
+              {
+                "name": null,
+                "position": "00:03:04"
+              },
+              {
+                "name": null,
+                "position": "00:05:47"
+              }
+            ]
+          },
+          "patches": [
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 460,
+                "scene": 0
+              }
+            },
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 461,
+                "scene": 0
+              }
+            },
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 462,
+                "scene": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Selling England by the Pound",
+      "songs": [
+        {
+          "name": "Dancing with the Moonlit Knight",
+          "track": {
+            "name": "Dancing With The Moonlight Knight (2008 - Remaster).mp3",
+            "markers": [
+              {
+                "name": null,
+                "position": "00:01:14"
+              },
+              {
+                "name": null,
+                "position": "00:01:57"
+              },
+              {
+                "name": null,
+                "position": "00:02:28"
+              },
+              {
+                "name": null,
+                "position": "00:05:06"
+              }
+            ]
+          },
+          "patches": [
+            {
+              "name": "Intro",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 456,
+                "scene": 0
+              }
+            },
+            {
+              "name": "Tapping",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Pitch 24",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 2
+              }
+            },
+            {
+              "name": "Pitch 12",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 3
+              }
+            },
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 4
+              }
+            },
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 5
+              }
+            },
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 459,
+                "scene": 1
+              }
+            },
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 456,
+                "scene": 0
+              }
+            },
+            {
+              "name": "",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 458,
+                "scene": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "Firth of Fifth",
+          "track": {
+            "name": "Firth Of Fifth - Genesis.mp3",
+            "markers": [
+              {
+                "name": null,
+                "position": "00:01:08"
+              },
+              {
+                "name": null,
+                "position": "00:05:08"
+              },
+              {
+                "name": null,
+                "position": "00:05:40"
+              }
+            ]
+          },
+          "patches": [
+            {
+              "name": "Intro",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 509,
+                "scene": 0
+              }
+            },
+            {
+              "name": "Acoustic",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 470,
+                "scene": 0
+              }
+            },
+            {
+              "name": "Reprise",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 509,
+                "scene": 0
+              }
+            },
+            {
+              "name": "Slide",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 471,
+                "scene": 0
+              }
+            },
+            {
+              "name": "Trillo",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 509,
+                "scene": 0
+              }
+            },
+            {
+              "name": "Solo",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 472,
+                "scene": 0
+              }
+            },
+            {
+              "name": "Finale",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 509,
+                "scene": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "The Lamb Lies Down",
+      "songs": [
+        {
+          "name": "The Lamia",
+          "track": {
+            "name": "The Lamia - Genesis.mp3",
+            "markers": [
+              {
+                "name": null,
+                "position": "00:05:24"
+              }
+            ]
+          },
+          "patches": [
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 463,
+                "scene": 0
+              }
+            },
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 464,
+                "scene": 0
+              }
+            },
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 466,
+                "scene": 0
+              }
+            },
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 465,
+                "scene": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Agosto 2021",
+      "songs": [
+        {
+          "name": "Get\u0027em Out By Friday",
+          "track": {
+            "name": "Get \u0027Em Out By Friday.mp3",
+            "markers": []
+          },
+          "patches": [
+            {
+              "name": "Intro",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 507,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Intro Diatonic 1",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 507,
+                "scene": 2
+              }
+            },
+            {
+              "name": "Intro Diatonic 2",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 507,
+                "scene": 3
+              }
+            },
+            {
+              "name": "La-Re-Mi",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 0,
+                "scene": 5
+              }
+            },
+            {
+              "name": "Arpeggio1",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 389,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Crescendo",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 454,
+                "scene": 4
+              }
+            },
+            {
+              "name": "La",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 409,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Arpeggio1",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 389,
+                "scene": 1
+              }
+            },
+            {
+              "name": "La",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 409,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Arpeggio1",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 389,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Crescendo",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 454,
+                "scene": 4
+              }
+            },
+            {
+              "name": "Solo",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 194,
+                "scene": 4
+              }
+            },
+            {
+              "name": "NotineSilenziose",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 3,
+                "scene": 1
+              }
+            },
+            {
+              "name": "FadeBridgeIn",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 2,
+                "scene": 2
+              }
+            },
+            {
+              "name": "NotineSilenziose",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 3,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Slide",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 331,
+                "scene": 2
+              }
+            },
+            {
+              "name": "NotineSilenziose",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 3,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Arpeggio1",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 389,
+                "scene": 1
+              }
+            },
+            {
+              "name": "LaReMiSi",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 502,
+                "scene": 5
+              }
+            },
+            {
+              "name": "ArpFinale",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 3,
+                "scene": 2
+              }
+            }
+          ]
+        },
+        {
+          "name": "Can Utility",
+          "track": {
+            "name": "Can-Utility and the Coastliners.mp3",
+            "markers": [
+              {
+                "name": null,
+                "position": "00:04:30"
+              },
+              {
+                "name": null,
+                "position": "00:05:25"
+              }
+            ]
+          },
+          "patches": [
+            {
+              "name": "Intro",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 491,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Re min",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 503,
+                "scene": 1
+              }
+            },
+            {
+              "name": "SIb\u002B Do\u002B Envelope ",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 503,
+                "scene": 2
+              }
+            },
+            {
+              "name": "Strumming",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 503,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Solo Intro",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 398,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Solo",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 398,
+                "scene": 2
+              }
+            },
+            {
+              "name": "Envelope",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 398,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Bridge",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 398,
+                "scene": 2
+              }
+            },
+            {
+              "name": "Envelope",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 398,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Finale",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 398,
+                "scene": 2
+              }
+            }
+          ]
+        },
+        {
+          "name": "The Lamia",
+          "track": {
+            "name": "The Lamia - Genesis.mp3",
+            "markers": []
+          },
+          "patches": [
+            {
+              "name": "Arpeggio 1",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 95,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Arpeggio 2",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 464,
+                "scene": 2
+              }
+            },
+            {
+              "name": "Envelope",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 464,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Arpeggio 1",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 95,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Arpeggio 2",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 464,
+                "scene": 2
+              }
+            },
+            {
+              "name": "Envelope",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 464,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Slide",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 466,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Solo",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 484,
+                "scene": 8
+              }
+            }
+          ]
+        },
+        {
+          "name": "The Chamber of 32 Doors",
+          "track": {
+            "name": "The Chamber of 32 Doors - Genesis.mp3",
+            "markers": []
+          },
+          "patches": [
+            {
+              "name": "Into (Si)",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 486,
+                "scene": 6
+              }
+            },
+            {
+              "name": "Strumming",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 99,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Into",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 486,
+                "scene": 6
+              }
+            },
+            {
+              "name": "Strumming",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 99,
+                "scene": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "Anyway",
+          "track": {
+            "name": "Anyway - Genesis.mp3",
+            "markers": []
+          },
+          "patches": [
+            {
+              "name": "Sol",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 485,
+                "scene": 6
+              }
+            },
+            {
+              "name": "Enfasi",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 485,
+                "scene": 7
+              }
+            },
+            {
+              "name": "Solo",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 476,
+                "scene": 1
+              }
+            }
+          ]
+        },
+        {
+          "name": "CuckooCocoon",
+          "track": {
+            "name": "Genesis - Cuckoo Cocoon.mp3",
+            "markers": []
+          },
+          "patches": [
+            {
+              "name": "Intro cupo",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 497,
+                "scene": 0
+              }
+            },
+            {
+              "name": "Cuckoon",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 492,
+                "scene": 2
+              }
+            }
+          ]
+        },
+        {
+          "name": "Watcher Of The Skies",
+          "track": {
+            "name": "Watcher Of The Skies.mp3",
+            "markers": [
+              {
+                "name": null,
+                "position": "00:01:27"
+              },
+              {
+                "name": null,
+                "position": "00:03:04"
+              },
+              {
+                "name": null,
+                "position": "00:05:47"
+              }
+            ]
+          },
+          "patches": [
+            {
+              "name": "base crescendo",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 460,
+                "scene": 1
+              }
+            },
+            {
+              "name": "solo",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 460,
+                "scene": 2
+              }
+            },
+            {
+              "name": "base",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 460,
+                "scene": 1
+              }
+            },
+            {
+              "name": "envelope (Sol# - Fa)",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 462,
+                "scene": 0
+              }
+            },
+            {
+              "name": "base",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 460,
+                "scene": 1
+              }
+            },
+            {
+              "name": "solo",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 460,
+                "scene": 2
+              }
+            },
+            {
+              "name": "base",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 460,
+                "scene": 1
+              }
+            },
+            {
+              "name": "envelope",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 462,
+                "scene": 8
+              }
+            }
+          ]
+        },
+        {
+          "name": "Dancing with the Moonlit Knight",
+          "track": {
+            "name": "Dancing With The Moonlight Knight (2008 - Remaster).mp3",
+            "markers": [
+              {
+                "name": null,
+                "position": "00:01:14"
+              },
+              {
+                "name": null,
+                "position": "00:01:57"
+              },
+              {
+                "name": null,
+                "position": "00:02:28"
+              },
+              {
+                "name": null,
+                "position": "00:05:10"
+              }
+            ]
+          },
+          "patches": [
+            {
+              "name": "Intro",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 456,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Tapping",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Pitch 24",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 2
+              }
+            },
+            {
+              "name": "Pitch 12",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 3
+              }
+            },
+            {
+              "name": "Envelope",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 4
+              }
+            },
+            {
+              "name": "Env Clean",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 5
+              }
+            },
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 459,
+                "scene": 1
+              }
+            },
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 456,
+                "scene": 1
+              }
+            },
+            {
+              "name": "",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 458,
+                "scene": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "Dancing 110",
+          "track": {
+            "name": "Dancing 110.mp3",
+            "markers": [
+              {
+                "name": null,
+                "position": "00:02:47"
+              },
+              {
+                "name": null,
+                "position": "00:05:35"
+              }
+            ]
+          },
+          "patches": [
+            {
+              "name": "Intro",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 456,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Tapping",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Pitch 24",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 2
+              }
+            },
+            {
+              "name": "Pitch 12",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 3
+              }
+            },
+            {
+              "name": "Envelope",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 4
+              }
+            },
+            {
+              "name": "Env Clean",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 5
+              }
+            },
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 459,
+                "scene": 1
+              }
+            },
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 456,
+                "scene": 1
+              }
+            },
+            {
+              "name": "",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 458,
+                "scene": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "Dancing 100",
+          "track": {
+            "name": "Dancing 100.mp3",
+            "markers": [
+              {
+                "name": null,
+                "position": "00:03:04"
+              },
+              {
+                "name": null,
+                "position": "00:06:08"
+              }
+            ]
+          },
+          "patches": [
+            {
+              "name": "Intro",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 456,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Tapping",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Pitch 24",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 2
+              }
+            },
+            {
+              "name": "Pitch 12",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 3
+              }
+            },
+            {
+              "name": "Envelope",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 4
+              }
+            },
+            {
+              "name": "Env Clean",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 457,
+                "scene": 5
+              }
+            },
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 459,
+                "scene": 1
+              }
+            },
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 456,
+                "scene": 1
+              }
+            },
+            {
+              "name": "",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 458,
+                "scene": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "Firth of Fifth",
+          "track": {
+            "name": "Firth Of Fifth - Genesis.mp3",
+            "markers": [
+              {
+                "name": null,
+                "position": "00:01:08"
+              },
+              {
+                "name": null,
+                "position": "00:05:08"
+              },
+              {
+                "name": null,
+                "position": "00:05:40"
+              }
+            ]
+          },
+          "patches": [
+            {
+              "name": "Intro",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 509,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Acoustic",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 470,
+                "scene": 8
+              }
+            },
+            {
+              "name": "Reprise",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 509,
+                "scene": 2
+              }
+            },
+            {
+              "name": "Acoustic",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 470,
+                "scene": 8
+              }
+            },
+            {
+              "name": "Intro",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 509,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Slide",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 471,
+                "scene": 1
+              }
+            },
+            {
+              "name": "Trillo",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 509,
+                "scene": 0
+              }
+            },
+            {
+              "name": "Solo",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 472,
+                "scene": 0
+              }
+            },
+            {
+              "name": "Finale",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 509,
+                "scene": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "The Musical Box",
+          "track": {
+            "name": "01 - The Musical Box.flac",
+            "markers": []
+          },
+          "patches": [
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 467,
+                "scene": 0
+              }
+            },
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 468,
+                "scene": 0
+              }
+            },
+            {
+              "name": null,
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 465,
+                "scene": 0
+              }
+            }
+          ]
+        },
+        {
+          "name": "The Return of the Gian Hogweed",
+          "track": {
+            "name": "The Return Of The Giant Hogweed.flac",
+            "markers": []
+          },
+          "patches": [
+            {
+              "name": "intro",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 475,
+                "scene": 1
+              }
+            },
+            {
+              "name": "-12",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 508,
+                "scene": 2
+              }
+            },
+            {
+              "name": "\u002B12",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 508,
+                "scene": 3
+              }
+            },
+            {
+              "name": "Stacco",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 508,
+                "scene": 4
+              }
+            },
+            {
+              "name": "Clean",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 508,
+                "scene": 5
+              }
+            },
+            {
+              "name": "Dist",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 508,
+                "scene": 4
+              }
+            },
+            {
+              "name": "Clean",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 508,
+                "scene": 5
+              }
+            },
+            {
+              "name": "-12",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 508,
+                "scene": 2
+              }
+            },
+            {
+              "name": "\u002B12",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 508,
+                "scene": 3
+              }
+            },
+            {
+              "name": "Stacco",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 508,
+                "scene": 4
+              }
+            },
+            {
+              "name": "Clean",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 508,
+                "scene": 5
+              }
+            },
+            {
+              "name": "Dist",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 508,
+                "scene": 4
+              }
+            },
+            {
+              "name": "Clean",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 508,
+                "scene": 5
+              }
+            },
+            {
+              "name": "Solo con Flauto",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 450,
+                "scene": 8
+              }
+            },
+            {
+              "name": "\u002B12",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 508,
+                "scene": 3
+              }
+            },
+            {
+              "name": "Dist",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 508,
+                "scene": 4
+              }
+            },
+            {
+              "name": "Clean",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 508,
+                "scene": 5
+              }
+            },
+            {
+              "name": "SoloReverb",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 451,
+                "scene": 1
+              }
+            },
+            {
+              "name": "SoloReverbDiat",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 451,
+                "scene": 2
+              }
+            },
+            {
+              "name": "TapPicking",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 451,
+                "scene": 3
+              }
+            },
+            {
+              "name": "2nd",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 451,
+                "scene": 4
+              }
+            },
+            {
+              "name": "Finale",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 395,
+                "scene": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+    "libraries": [
+        {
+            "name": "The lambs",
+            "songs": [
+                {
+                    "name": "Get'em Out By Friday",
+                    "track": {
+                        "name": "Get 'Em Out By Friday.mp3",
+                        "markers": [
+                            {
+                                "name": "first",
+                                "position": "00:04:30"
+                            }
+                        ]
+                    },
+                    "patches":[
+                        {
+                            "name": "Intro",
+                            "axeFx2": {
+                                "scene": 1,   
+                                "number": 507    
+                            },
+                            "axeFx3": {
+                                "scene": 1,
+                                "number": 507    
+                            }
+                        }
+                    ]
+                }
+            ]
+
+        }
+    ]
+}
