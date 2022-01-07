@@ -12,8 +12,10 @@ struct Patch: Hashable, Identifiable {
     var axeFx2: ProgramScene?
     var axeFx3: ProgramScene?
     let id = UUID()
+    let index: Int
     
-    init(_ patchModel: PatchModel) {
+    init(_ patchModel: PatchModel, index: Int) {
+        self.index = index
         if let uwName = patchModel.name {
             self.name = uwName
         } else {
@@ -28,10 +30,10 @@ struct Patch: Hashable, Identifiable {
     }
     
     static func == (lhs: Patch, rhs: Patch) -> Bool {
-        return lhs.name == rhs.name
+        return lhs.index == rhs.index
     }
 
     func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
+        hasher.combine(index)
     }
 }

@@ -16,8 +16,10 @@ struct Song: Hashable {
         self.deviceManager = deviceManager
         self.name = songModel.name
         
+        var index = 0
         for patchModel in songModel.patches {
-            patches.append(Patch(patchModel))            
+            patches.append(Patch(patchModel, index: index))
+            index += 1
         }
     }
     

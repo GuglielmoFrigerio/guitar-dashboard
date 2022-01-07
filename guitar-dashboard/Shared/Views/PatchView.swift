@@ -11,8 +11,19 @@ import SwiftUI
 struct PatchView: View {
     var index: Int
     var name: String
+    @Binding var selectedPatch: Int?
     
     var body: some View {
-        Text("bla")
+        HStack {
+            Text(name)
+            Spacer()
+            if index == selectedPatch {
+                Image(systemName: "checkmark")
+                    .foregroundColor(.accentColor)
+            }
+        }
+        .onTapGesture {
+            self.selectedPatch = index
+        }
     }
 }
