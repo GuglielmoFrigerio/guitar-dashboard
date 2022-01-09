@@ -6,12 +6,15 @@
 //
 
 import Foundation
+import os
 
-struct Song: Hashable {
+class Song: Hashable {
     private let deviceManager: DeviceManagerProtocol
     var patches: [Patch] = []
     let name: String
-    
+    var onPatchSelected: ((Int) -> Void)? = nil
+    let logger: Logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "Song")
+
     init (_ songModel: SongModel,_ deviceManager: DeviceManagerProtocol) {
         self.deviceManager = deviceManager
         self.name = songModel.name
@@ -33,5 +36,20 @@ struct Song: Hashable {
     
     func selectPatch(index: Int) {
         self.patches[index].select()
+    }
+    
+    func activate(onPatchSelected: @escaping (Int) -> Void) {
+        self.onPatchSelected = onPatchSelected
+        self.deviceManager.subscribePedalboard {
+            pedalboardKey in
+            self.logger.log("pedalboard key received \(pedalboardKey)")
+        }
+        self.logger.log("song \(self.name) activated")
+    }
+    
+    func deactivate() {
+        self.onPatchSelected = nil
+        self.deviceManager.unsubscribePedaboard()
+        self.logger.log("song \(self.name) deactivated")
     }
 }

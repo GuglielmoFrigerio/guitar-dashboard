@@ -12,4 +12,6 @@ protocol DeviceManagerProtocol {
     
     func send(patch: Patch)
     
+    func subscribePedalboard(onPedalboardKey: @escaping (PedalboardKey) -> Void)
+    func unsubscribePedaboard()    
 }

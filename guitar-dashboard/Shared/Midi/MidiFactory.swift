@@ -46,6 +46,9 @@ public class MidiFactory: MidiFactoryProtocol {
     var midiClientRef: MIDIClientRef
     let logger: Logger
     let setupChangedHandler: (MidiFactory) -> Void
+    var timer: Timer?
+    var subscribedInputSourceName: String? = nil
+    var inputSourceSubscriptionHandler: ((MidiInputPort) -> Void)? = nil
     
     private func getSourceIndex(deviceName: String) -> Int {
         let numberOfSources = MIDIGetNumberOfSources()
@@ -79,6 +82,21 @@ public class MidiFactory: MidiFactoryProtocol {
         }
         return -1;
     }
+    
+    @objc private func timerFired(timer: Timer) {
+        self.logger.log("Timer fired")
+        if let name = self.subscribedInputSourceName, let handler = self.inputSourceSubscriptionHandler {
+            let sourceIndex = getSourceIndex(deviceName: name)
+            if sourceIndex != -1 {
+                self.logger.log("input source \(name) available at index \(sourceIndex)")
+                if let midiInputPort = try? MidiInputPort(midiClientRef: midiClientRef, portName: name, sourceIndex: sourceIndex) {
+                    handler(midiInputPort)
+                }
+                self.inputSourceSubscriptionHandler = nil
+                self.subscribedInputSourceName = nil
+            }
+        }
+    }
 
     init(clientName: String, setupChangedHandler: @escaping (MidiFactory) -> Void) throws {
         self.setupChangedHandler = setupChangedHandler
@@ -98,16 +116,18 @@ public class MidiFactory: MidiFactoryProtocol {
             
         }
         
+
         if (status != noErr) {
             throw MidiError.MidiOperationFailed(errorCode: status, functionName: "MIDIClientCreateWithBlock")
         }
+        
 
     }
     
     func createInputPort(deviceName: String) -> MidiInputPort? {
-        let destinationIndex = getDestinationIndex(deviceName: deviceName)
-        if destinationIndex != -1 {
-            return try? MidiInputPort(midiClientRef: midiClientRef, portName: deviceName, sourceIndex: destinationIndex)
+        let sourceIndex = getSourceIndex(deviceName: deviceName)
+        if sourceIndex != -1 {
+            return try? MidiInputPort(midiClientRef: midiClientRef, portName: deviceName, sourceIndex: sourceIndex)
         }
         return nil
     }
@@ -165,5 +185,11 @@ public class MidiFactory: MidiFactoryProtocol {
         for destination in getMidiDestinations() {
             self.logger.log("destination: \(destination)")
         }
+    }
+    
+    func subscribeInputSource(name: String, onSourceAvailable: @escaping (MidiInputPort) -> Void) {
+        subscribedInputSourceName = name
+        inputSourceSubscriptionHandler = onSourceAvailable
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
     }
 }

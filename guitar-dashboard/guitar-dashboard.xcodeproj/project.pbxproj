@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BFAEADAC278B363100466ADE /* MidiPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEADAB278B363100466ADE /* MidiPacket.swift */; };
+		BFAEADAD278B363100466ADE /* MidiPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEADAB278B363100466ADE /* MidiPacket.swift */; };
 		BFBD962A27884A35003EC3FF /* DIContainerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD962927884A35003EC3FF /* DIContainerProtocol.swift */; };
 		BFBD962B27884A35003EC3FF /* DIContainerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD962927884A35003EC3FF /* DIContainerProtocol.swift */; };
 		BFBD963627884AA0003EC3FF /* ProgramScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD962D27884AA0003EC3FF /* ProgramScene.swift */; };
@@ -101,6 +103,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BFAEADAB278B363100466ADE /* MidiPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiPacket.swift; sourceTree = "<group>"; };
 		BFBD962927884A35003EC3FF /* DIContainerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIContainerProtocol.swift; sourceTree = "<group>"; };
 		BFBD962D27884AA0003EC3FF /* ProgramScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramScene.swift; sourceTree = "<group>"; };
 		BFBD962E27884AA0003EC3FF /* MidiError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MidiError.swift; sourceTree = "<group>"; };
@@ -199,6 +202,7 @@
 				BFBD963527884AA0003EC3FF /* MidiInputPort.swift */,
 				BFBD963327884AA0003EC3FF /* MidiOutputPort.swift */,
 				BFBD962D27884AA0003EC3FF /* ProgramScene.swift */,
+				BFAEADAB278B363100466ADE /* MidiPacket.swift */,
 			);
 			path = Midi;
 			sourceTree = "<group>";
@@ -479,6 +483,7 @@
 				BFCE1E762788452300E4C482 /* Persistence.swift in Sources */,
 				BFBD964027884AA0003EC3FF /* MidiInfo.swift in Sources */,
 				BFBD968527884C02003EC3FF /* MainView.swift in Sources */,
+				BFAEADAC278B363100466ADE /* MidiPacket.swift in Sources */,
 				BFCE1E702788452300E4C482 /* guitar_dashboard.xcdatamodeld in Sources */,
 				BFBD965727884B5A003EC3FF /* LibraryModel.swift in Sources */,
 				BFBD965527884B5A003EC3FF /* Entity.swift in Sources */,
@@ -520,6 +525,7 @@
 				BFCE1E772788452300E4C482 /* Persistence.swift in Sources */,
 				BFBD964127884AA0003EC3FF /* MidiInfo.swift in Sources */,
 				BFBD968627884C02003EC3FF /* MainView.swift in Sources */,
+				BFAEADAD278B363100466ADE /* MidiPacket.swift in Sources */,
 				BFCE1E712788452300E4C482 /* guitar_dashboard.xcdatamodeld in Sources */,
 				BFBD965827884B5A003EC3FF /* LibraryModel.swift in Sources */,
 				BFBD965627884B5A003EC3FF /* Entity.swift in Sources */,

@@ -15,6 +15,17 @@ class DevicesManager: DeviceManagerProtocol {
     var axeFx3Device: FractalDevice? = nil
     var pedalBoard: Pedalboard? = nil
     let logger: Logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "DevicesManager")
+    var pedalboardKeySubscriber: ((PedalboardKey) -> Void)? = nil
+    
+    private func pedalSourceInputAvailable(inputPort: MidiInputPort) {
+        pedalBoard = Pedalboard(midiInputPort: inputPort, keyListener: pedalboardKeyHandler)
+    }
+    
+    private func pedalboardKeyHandler(key: PedalboardKey) {
+        if let subscriber = self.pedalboardKeySubscriber {
+            subscriber(key)
+        }
+    }
     
     init() {
         midiFactory = nil
@@ -35,10 +46,7 @@ class DevicesManager: DeviceManagerProtocol {
             DIContainer.shared.register(type: MidiFactoryProtocol.self, component: uwMidiFactory)
             
             let inputPortName = "BT200S-4 v2.3.1 9BCD Bluetooth"
-            if let uwMidiInputPort = uwMidiFactory.createInputPort(deviceName: inputPortName) {
-                logger.log("midi input port \(inputPortName) created")
-                pedalBoard = Pedalboard(midiInputPort: uwMidiInputPort)
-            }
+            uwMidiFactory.subscribeInputSource(name: inputPortName, onSourceAvailable: pedalSourceInputAvailable)
         }
         
         for libMode in libraryModels {
@@ -54,5 +62,13 @@ class DevicesManager: DeviceManagerProtocol {
                 logger.warning("Unable to send patch to AxeFx3 device")                
             }
         }
+    }
+    
+    func subscribePedalboard(onPedalboardKey: @escaping (PedalboardKey) -> Void) {
+        pedalboardKeySubscriber = onPedalboardKey
+    }
+    
+    func unsubscribePedaboard() {
+        pedalboardKeySubscriber = nil
     }
 }

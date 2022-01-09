@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Library: Hashable {
+class Library: Hashable {
     var name: String
     var songs: [Song] = []
     
