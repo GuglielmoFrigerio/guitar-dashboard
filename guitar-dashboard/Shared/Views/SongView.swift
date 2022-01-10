@@ -29,6 +29,7 @@ struct SongView: View {
         .onAppear {
             self.song.activate {
                 index in
+                self.selected = index
             }
         }
         .onDisappear {

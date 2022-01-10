@@ -14,6 +14,7 @@ class Song: Hashable {
     let name: String
     var onPatchSelected: ((Int) -> Void)? = nil
     let logger: Logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "Song")
+    var currentSelection = 0
 
     init (_ songModel: SongModel,_ deviceManager: DeviceManagerProtocol) {
         self.deviceManager = deviceManager
@@ -43,6 +44,15 @@ class Song: Hashable {
         self.deviceManager.subscribePedalboard {
             pedalboardKey in
             self.logger.log("pedalboard key received \(pedalboardKey)")
+            if let patchSelected = self.onPatchSelected {
+                if pedalboardKey == .first && self.currentSelection > 0 {
+                    self.currentSelection -= 1
+                    patchSelected(self.currentSelection)
+                } else if pedalboardKey == .second && self.currentSelection < (self.patches.count - 1) {
+                    self.currentSelection += 1
+                    patchSelected(self.currentSelection)
+                }
+            }
         }
         self.logger.log("song \(self.name) activated")
     }
