@@ -8,6 +8,7 @@
 import Foundation
 import CoreMIDI
 import os
+import UIKit
 
 extension MIDINotificationMessageID {
     var name: String {
@@ -42,6 +43,26 @@ extension MIDINotificationMessageID {
     }
 }
 
+extension MIDIObjectRef {
+    
+    func getName() -> String {
+        return getStringProperty(propertyId: kMIDIPropertyName)
+    }
+    
+    func getDisplayName() -> String {
+        return getStringProperty(propertyId: kMIDIPropertyDisplayName)
+    }
+    
+    func getStringProperty(propertyId: CFString) -> String {
+        var property : Unmanaged<CFString>?
+        let err = MIDIObjectGetStringProperty(self, propertyId, &property)
+        if err == noErr {
+            return property!.takeRetainedValue() as String
+        }
+        return ""
+    }
+}
+
 public class MidiFactory: MidiFactoryProtocol {
     var midiClientRef: MIDIClientRef
     let logger: Logger
@@ -49,6 +70,51 @@ public class MidiFactory: MidiFactoryProtocol {
     var timer: Timer?
     var subscribedInputSourceName: String? = nil
     var inputSourceSubscriptionHandler: ((MidiInputPort) -> Void)? = nil
+    
+    private func dumpDevices() {
+        let count = MIDIGetNumberOfDevices()
+        (0 ..< count).forEach { index in
+            let midiDevice = MIDIGetDevice(index)
+            let name = midiDevice.getName()
+            logger.log("Device: \(name)")
+            dumpDeviceEntities(deviceRef: midiDevice, name: name)
+        }
+    }
+    
+    private func dumpExternalDevices() {
+        let count = MIDIGetNumberOfExternalDevices()
+        (0 ..< count).forEach { index in
+            let midiDevice = MIDIGetExternalDevice(index)
+            let name = midiDevice.getName()
+            logger.log("External Device: \(name)")
+        }
+    }
+    
+    private func dumpDeviceEntities(deviceRef: MIDIDeviceRef, name: String) {
+        (0 ..< MIDIDeviceGetNumberOfEntities(deviceRef)).forEach {
+            index in
+            let entity = MIDIDeviceGetEntity(deviceRef, index)
+            let entityName = entity.getName()
+            logger.log("Device: \(name) entity: \(entityName)")
+            dumpEntity(entityRef: entity, deviceName: name, entityName: entityName)
+        }
+    }
+    
+    private func dumpEntity(entityRef: MIDIEntityRef, deviceName: String, entityName: String) {
+        (0 ..< MIDIEntityGetNumberOfSources(entityRef)).forEach {
+            index in
+            let sourceRef = MIDIEntityGetSource(entityRef, index)
+            let sourceName = sourceRef.getName()
+            logger.log("Device: \(deviceName) entity: \(entityName), source: \(sourceName)")
+        }
+        
+        (0 ..< MIDIEntityGetNumberOfDestinations(entityRef)).forEach {
+            index in
+            let destinationRef = MIDIEntityGetDestination(entityRef, index)
+            let destinationName = destinationRef.getName()
+            logger.log("Device: \(deviceName) entity: \(entityName), destination: \(destinationName)")
+        }
+    }
     
     private func getSourceIndex(deviceName: String) -> Int {
         let numberOfSources = MIDIGetNumberOfSources()
@@ -84,7 +150,6 @@ public class MidiFactory: MidiFactoryProtocol {
     }
     
     @objc private func timerFired(timer: Timer) {
-        self.logger.log("Timer fired")
         if let name = self.subscribedInputSourceName, let handler = self.inputSourceSubscriptionHandler {
             let sourceIndex = getSourceIndex(deviceName: name)
             if sourceIndex != -1 {
@@ -115,13 +180,13 @@ public class MidiFactory: MidiFactoryProtocol {
             }
             
         }
-        
 
         if (status != noErr) {
             throw MidiError.MidiOperationFailed(errorCode: status, functionName: "MIDIClientCreateWithBlock")
         }
-        
 
+        dumpDevices()
+        dumpExternalDevices()
     }
     
     func createInputPort(deviceName: String) -> MidiInputPort? {
@@ -132,12 +197,20 @@ public class MidiFactory: MidiFactoryProtocol {
         return nil
     }
     
+    func createInputPort(sourceIndex: Int, portName: String) -> MidiInputPort? {
+        return try? MidiInputPort(midiClientRef: midiClientRef, portName: portName, sourceIndex: sourceIndex)
+    }
+    
     func createOutputPort(deviceName: String) -> MidiOutputPort? {
         let destinationIndex = getDestinationIndex(deviceName: deviceName)
         if destinationIndex != -1 {
             return try? MidiOutputPort(midiClientRef: midiClientRef, portName: deviceName, destinationIndex: destinationIndex)
         }
         return nil
+    }
+    
+    func createOutputPort(destinationIndex: Int, portName: String) -> MidiOutputPort? {
+        return try? MidiOutputPort(midiClientRef: midiClientRef, portName: portName, destinationIndex: destinationIndex)
     }
     
     func getMidiSources() -> [String] {

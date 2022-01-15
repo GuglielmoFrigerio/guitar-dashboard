@@ -11,11 +11,12 @@ import os
 class DevicesManager: DeviceManagerProtocol {
     private let libraryModels: [LibraryModel]
     var libraries: [Library] = []
-    let midiFactory: MidiFactory?
+    let midiFactory: MidiFactory? = nil
     var axeFx3Device: FractalDevice? = nil
     var pedalBoard: Pedalboard? = nil
     let logger: Logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "DevicesManager")
     var pedalboardKeySubscriber: ((PedalboardKey) -> Void)? = nil
+    var endpointMonitor: MidiEndpointMonitor? = nil
     
     private func pedalSourceInputAvailable(inputPort: MidiInputPort) {
         pedalBoard = Pedalboard(midiInputPort: inputPort, keyListener: pedalboardKeyHandler)
@@ -28,7 +29,6 @@ class DevicesManager: DeviceManagerProtocol {
     }
     
     init() {
-        midiFactory = nil
         libraryModels = []
     }
 
