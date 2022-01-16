@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias MidiEndpointClosure = ((String?, Int) -> Void)
+typealias MidiEndpointClosure = ((String, Int) -> Void)
 
 class MidiEndpointCollection {
     private class EndpointContext {
@@ -36,7 +36,7 @@ class MidiEndpointCollection {
                 }
             } else if value.index != nil {
                 value.index = nil
-                value.listener(nil, -1)
+                value.listener(key, -1)
             }
         }
     }

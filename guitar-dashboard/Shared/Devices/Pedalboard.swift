@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import os
 
 enum PedalboardKey: CustomStringConvertible {
     case first
@@ -34,7 +35,8 @@ class Pedalboard {
     
     let midiInputPort: MidiInputPort
     let keyListener: (PedalboardKey) -> Void;
-    
+    let logger: Logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "Pedalboard")
+
     init (midiInputPort: MidiInputPort, keyListener: @escaping (PedalboardKey) -> Void) {
         self.midiInputPort = midiInputPort
         self.keyListener = keyListener
@@ -59,5 +61,10 @@ class Pedalboard {
                 }
             }
         })
+    }
+    
+    func dispose() {
+        midiInputPort.dispose()
+        logger.info("Pedalboard disposed")
     }
 }

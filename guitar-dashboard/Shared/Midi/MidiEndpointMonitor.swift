@@ -7,13 +7,15 @@
 
 import Foundation
 import CoreMIDI
+import os
 
 class MidiEndpointMonitor {
     
     var sourceEndpointCollection = MidiEndpointCollection()
     var destinationEndpoitCollection = MidiEndpointCollection()
     let midiFactory: MidiFactory
-    
+    let logger: Logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "MidiEndpointMonitor")
+
     private func loadSourceEndpoints() -> [String: Int] {
         var endpoints: [String: Int] = [:]
         
@@ -21,8 +23,9 @@ class MidiEndpointMonitor {
         
         for idx in 0...numberOfSources {
             let midiEndpointRef = MIDIGetSource(idx)
-            let name = midiEndpointRef.getName()
+            let name = midiEndpointRef.getDisplayName()
             endpoints[name] = idx
+            logger.info("loadSourceEndpoints: added source \(name) at index \(idx)")
         }
         return endpoints
 
@@ -36,8 +39,9 @@ class MidiEndpointMonitor {
         
         for idx in 0...numberOfSources {
             let midiEndpointRef = MIDIGetDestination(idx)
-            let name = midiEndpointRef.getName()
+            let name = midiEndpointRef.getDisplayName()
             endpoints[name] = idx
+            logger.info("loadSourceEndpoints: added destination \(name) at index \(idx)")
         }
         return endpoints
 
@@ -50,10 +54,12 @@ class MidiEndpointMonitor {
     func subscribeSource(name: String, listener: @escaping (MidiInputPort?) -> Void) {
         sourceEndpointCollection.subscribe(name: name) {
             (name, index) in
-            if let uwName = name {
-                let midiInputPort = self.midiFactory.createInputPort(sourceIndex: index, portName: uwName)
+            if index != -1 {
+                self.logger.info("onSourceChange: endpoint '\(name)' available at index \(index)")
+                let midiInputPort = self.midiFactory.createInputPort(sourceIndex: index, portName: name)
                 listener(midiInputPort)
             } else {
+                self.logger.info("onSourceChange: endpoint '\(name)' is no longer available")
                 listener(nil)
             }
         }
@@ -62,19 +68,23 @@ class MidiEndpointMonitor {
     func subscribeDestination(name: String, listener: @escaping (MidiOutputPort?) -> Void) {
         destinationEndpoitCollection.subscribe(name: name) {
             (name, index) in
-            if let uwName = name {
-                let midiOutputPort = self.midiFactory.createOutputPort(destinationIndex: index, portName: uwName)
+            if (index != -1) {
+                self.logger.info("onDestinationChange: endpoint '\(name)' available at index \(index)")
+                let midiOutputPort = self.midiFactory.createOutputPort(destinationIndex: index, portName: name)
                 listener(midiOutputPort)
             } else {
+                self.logger.info("onDestinationChange: endpoint '\(name)' is no longer available")
                 listener(nil)
             }
         }        
     }
     
     func update() {
+        logger.info("updating subscriptions")
         let sourceEndpoints = loadSourceEndpoints()
-        let destinationEndpoints = loadDestinationEndpoints()
         sourceEndpointCollection.compareCollection(endpoints: sourceEndpoints)
+        
+        let destinationEndpoints = loadDestinationEndpoints()
         destinationEndpoitCollection.compareCollection(endpoints: destinationEndpoints)
     }
 }

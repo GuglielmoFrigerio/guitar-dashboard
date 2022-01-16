@@ -14,6 +14,12 @@ class MidiInputPort {
     var source: MIDIEndpointRef = 0
     let logger: Logger
     var packetListener: ((MidiPacket) -> Void)?
+
+    private func verify(code: OSStatus, operationName: String) {
+        if code != noErr {
+            logger.warning("\(operationName) failed (\(code))")
+        }
+    }
     
     init (midiClientRef: MIDIClientRef, portName: String, sourceIndex: Int) throws {
         logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "MidiInputPort")
@@ -55,5 +61,10 @@ class MidiInputPort {
     
     func onMidiPacket(packetListener: @escaping (MidiPacket) -> Void) {
         self.packetListener = packetListener;
+    }
+    
+    func dispose() {
+        verify(code: MIDIPortDisconnectSource(inputPort, source), operationName: "MIDIPortDisconnectSource")
+        verify(code: MIDIPortDispose(inputPort), operationName: "MIDIPortDispose")        
     }
 }

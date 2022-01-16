@@ -11,7 +11,7 @@ import os
 class DevicesManager: DeviceManagerProtocol {
     private let libraryModels: [LibraryModel]
     var libraries: [Library] = []
-    let midiFactory: MidiFactory? = nil
+    let midiFactory: MidiFactory?
     var axeFx3Device: FractalDevice? = nil
     var pedalBoard: Pedalboard? = nil
     let logger: Logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "DevicesManager")
@@ -29,29 +29,47 @@ class DevicesManager: DeviceManagerProtocol {
     }
     
     init() {
+        midiFactory = nil
         libraryModels = []
     }
 
     init(libraries: [LibraryModel]) {
         self.libraryModels = libraries        
         
-        midiFactory = try? MidiFactory(clientName: "FractalClient") {
-            midiFactory in
-            midiFactory.logMidiEndpoints()
-        }
+        midiFactory = MidiFactory(clientName: "FractalClient")
         if let uwMidiFactory = midiFactory {
-            let deviceName = "Axe-Fx III"
-            axeFx3Device = FractalDevice(midiFactory: uwMidiFactory, deviceName: deviceName)
-            logger.log("device \(deviceName) created")
             DIContainer.shared.register(type: MidiFactoryProtocol.self, component: uwMidiFactory)
-            
-            let inputPortName = "BT200S-4 v2.3.1 9BCD Bluetooth"
-            uwMidiFactory.subscribeInputSource(name: inputPortName, onSourceAvailable: pedalSourceInputAvailable)
+                        
+            endpointMonitor = MidiEndpointMonitor(midiFactory: uwMidiFactory)
+            endpointMonitor?.subscribeSource(name: "BT200S-4 v2.3.1 9BCD Bluetooth") {
+                midiInpuPort in
+                if let uwMidiInpuPort = midiInpuPort {
+                    self.pedalBoard = Pedalboard(midiInputPort: uwMidiInpuPort, keyListener: self.pedalboardKeyHandler)
+                } else {
+                    self.pedalBoard?.dispose()
+                    self.pedalBoard = nil
+                }
+            }
+            endpointMonitor?.subscribeDestination(name: "Axe-Fx III") {
+                midiOutputPort in
+                if let uwMidiOutputPort = midiOutputPort {
+                    self.axeFx3Device = FractalDevice(midiOutputPort: uwMidiOutputPort, deviceName: "Axe-Fx III")
+                } else {
+                    self.axeFx3Device = nil
+                }
+            }
         }
         
         for libMode in libraryModels {
             self.libraries.append(Library(libMode, self))
         }
+        
+        midiFactory?.onSetupChanged {
+            midiFactory in
+            self.endpointMonitor?.update()
+        }
+        
+        endpointMonitor?.update()
     }
     
     func send (patch: Patch) {

@@ -66,10 +66,7 @@ extension MIDIObjectRef {
 public class MidiFactory: MidiFactoryProtocol {
     var midiClientRef: MIDIClientRef
     let logger: Logger
-    let setupChangedHandler: (MidiFactory) -> Void
-    var timer: Timer?
-    var subscribedInputSourceName: String? = nil
-    var inputSourceSubscriptionHandler: ((MidiInputPort) -> Void)? = nil
+    var setupChangedHandler: ((MidiFactory) -> Void)? = nil
     
     private func dumpDevices() {
         let count = MIDIGetNumberOfDevices()
@@ -148,23 +145,8 @@ public class MidiFactory: MidiFactoryProtocol {
         }
         return -1;
     }
-    
-    @objc private func timerFired(timer: Timer) {
-        if let name = self.subscribedInputSourceName, let handler = self.inputSourceSubscriptionHandler {
-            let sourceIndex = getSourceIndex(deviceName: name)
-            if sourceIndex != -1 {
-                self.logger.log("input source \(name) available at index \(sourceIndex)")
-                if let midiInputPort = try? MidiInputPort(midiClientRef: midiClientRef, portName: name, sourceIndex: sourceIndex) {
-                    handler(midiInputPort)
-                }
-                self.inputSourceSubscriptionHandler = nil
-                self.subscribedInputSourceName = nil
-            }
-        }
-    }
 
-    init(clientName: String, setupChangedHandler: @escaping (MidiFactory) -> Void) throws {
-        self.setupChangedHandler = setupChangedHandler
+    init?(clientName: String) {
         logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "MidiFactory")
         
         midiClientRef = MIDIClientRef()
@@ -176,13 +158,14 @@ public class MidiFactory: MidiFactoryProtocol {
             self!.logger.log("Message received. id: \(midiNotification.messageID.name) size: \(midiNotification.messageSize)")
             
             if midiNotification.messageID == .msgSetupChanged {
-                self?.setupChangedHandler(self!)
+                self?.setupChangedHandler?(self!)
             }
             
         }
 
         if (status != noErr) {
-            throw MidiError.MidiOperationFailed(errorCode: status, functionName: "MIDIClientCreateWithBlock")
+            logger.warning("MIDIClientCreateWithBlock failed: \(status)")
+            return nil
         }
 
         dumpDevices()
@@ -221,11 +204,8 @@ public class MidiFactory: MidiFactoryProtocol {
         
         for idx in 0...numberOfSources {
             let midiEndpointRef = MIDIGetSource(idx)
-            var displayName : Unmanaged<CFString>?
-            let err = MIDIObjectGetStringProperty(midiEndpointRef, kMIDIPropertyDisplayName, &displayName)
-            if (err == noErr) {
-                midiSources.append(displayName!.takeRetainedValue() as String)
-            }
+            let displayName = midiEndpointRef.getDisplayName()
+            midiSources.append(displayName)
         }
         
         return midiSources
@@ -233,20 +213,17 @@ public class MidiFactory: MidiFactoryProtocol {
     }
     
     func getMidiDestinations() -> [String] {
-        var midiSources = [String]()
+        var midiDestinations = [String]()
         
         let numberOfDestinations = MIDIGetNumberOfDestinations()
         
         for idx in 0...numberOfDestinations {
             let midiEndpointRef = MIDIGetDestination(idx)
-            var displayName : Unmanaged<CFString>?
-            let err = MIDIObjectGetStringProperty(midiEndpointRef, kMIDIPropertyDisplayName, &displayName)
-            if (err == noErr) {
-                midiSources.append(displayName!.takeRetainedValue() as String)
-            }
+            let displayName = midiEndpointRef.getDisplayName()
+            midiDestinations.append(displayName)
         }
         
-        return midiSources
+        return midiDestinations
 
     }
     
@@ -259,10 +236,8 @@ public class MidiFactory: MidiFactoryProtocol {
             self.logger.log("destination: \(destination)")
         }
     }
-    
-    func subscribeInputSource(name: String, onSourceAvailable: @escaping (MidiInputPort) -> Void) {
-        subscribedInputSourceName = name
-        inputSourceSubscriptionHandler = onSourceAvailable
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
+        
+    func onSetupChanged(handler: @escaping (MidiFactory) -> Void) {
+        self.setupChangedHandler = handler
     }
 }
