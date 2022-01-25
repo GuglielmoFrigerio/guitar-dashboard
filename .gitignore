@@ -28,3 +28,9 @@ DerivedData/
 XmlToJsonConverter/.vs
 XmlToJsonConverter/XmlToJsonConverter/bin
 XmlToJsonConverter/XmlToJsonConverter/obj
+track-server/track-server/bin
+track-server/track-server/wwwroot/lib
+track-server/track-server/obj/Debug
+track-server/track-server/obj
+track-server/.vs
+guitar-dashboard/Shared/Tracks

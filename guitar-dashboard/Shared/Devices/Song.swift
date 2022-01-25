@@ -15,10 +15,13 @@ class Song: Hashable {
     var onPatchSelected: ((Int) -> Void)? = nil
     let logger: Logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "Song")
     var currentSelection = 0
+    let trackName: String
 
     init (_ songModel: SongModel,_ deviceManager: DeviceManagerProtocol) {
         self.deviceManager = deviceManager
         self.name = songModel.name
+        trackName = songModel.track.name
+        
         
         var index = 0
         for patchModel in songModel.patches {

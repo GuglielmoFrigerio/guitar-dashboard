@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct PatchView: View {
+    
     let patch: Patch
     @Binding var selectedPatch: Int?
     

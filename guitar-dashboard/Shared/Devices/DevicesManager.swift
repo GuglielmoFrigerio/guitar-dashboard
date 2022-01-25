@@ -31,6 +31,51 @@ class DevicesManager: DeviceManagerProtocol {
     init() {
         midiFactory = nil
         libraryModels = []
+        
+        let fm = FileManager.default;
+        let directoryURL = fm.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        
+        do {
+            let items = try fm.contentsOfDirectory(atPath: directoryURL.path)
+            for item in items {
+                logger.info("file: \(item)")
+            }
+
+        } catch {
+            logger.warning("contentsOfDirectory failed")
+        }
+        
+//        let fileURL = URL(fileURLWithPath: "myFile", relativeTo: directoryURL).appendingPathExtension("txt")
+//        
+//        
+//        // Create data to be saved
+//        let myString = "Saving data with FileManager is easy!"
+//        guard let data = myString.data(using: .utf8) else {
+//            print("Unable to convert string to data")
+//            return
+//        }
+//        // Save the data
+//        do {
+//         try data.write(to: fileURL)
+//         print("File saved: \(fileURL.absoluteURL)")
+//        } catch {
+//         // Catch any errors
+//         print(error.localizedDescription)
+//        }
+//        
+//        let url = URL(string: "http://192.168.1.58:5074/api/Track/in%20the%20Cage%20-%20Genesis.mp3")!
+//
+//        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+//            guard let data = data else { return }
+//            let fileURL = URL(fileURLWithPath: "testTrack", relativeTo: directoryURL).appendingPathExtension("mp3")
+//            do {
+//                try data.write(to: fileURL)
+//            } catch {
+//                self.logger.warning("data.write failed")
+//            }
+//        }
+//
+//        task.resume()
     }
 
     init(libraries: [LibraryModel]) {

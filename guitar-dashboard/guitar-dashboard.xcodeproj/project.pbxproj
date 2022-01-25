@@ -10,6 +10,12 @@
 		BF1F67C12790A701003BA412 /* MidiEndpointCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F67C02790A701003BA412 /* MidiEndpointCollection.swift */; };
 		BF1F67C22790A701003BA412 /* MidiEndpointCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F67C02790A701003BA412 /* MidiEndpointCollection.swift */; };
 		BF1F67CA2792DE88003BA412 /* guitar_dashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F67C92792DE88003BA412 /* guitar_dashboardTests.swift */; };
+		BF36A88C279D70740090C0A0 /* PlayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF36A88B279D70740090C0A0 /* PlayerTime.swift */; };
+		BF36A88D279D70740090C0A0 /* PlayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF36A88B279D70740090C0A0 /* PlayerTime.swift */; };
+		BF36A88F279D70A80090C0A0 /* TimeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF36A88E279D70A80090C0A0 /* TimeConstant.swift */; };
+		BF36A890279D70A80090C0A0 /* TimeConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF36A88E279D70A80090C0A0 /* TimeConstant.swift */; };
+		BF36A892279D72620090C0A0 /* PlaybackValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF36A891279D72620090C0A0 /* PlaybackValue.swift */; };
+		BF36A893279D72620090C0A0 /* PlaybackValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF36A891279D72620090C0A0 /* PlaybackValue.swift */; };
 		BF553647278E03AA00E0770C /* MidiEndpointMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF553646278E03AA00E0770C /* MidiEndpointMonitor.swift */; };
 		BF553648278E03AA00E0770C /* MidiEndpointMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF553646278E03AA00E0770C /* MidiEndpointMonitor.swift */; };
 		BFAEADAC278B363100466ADE /* MidiPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEADAB278B363100466ADE /* MidiPacket.swift */; };
@@ -74,6 +80,16 @@
 		BFBD968427884C02003EC3FF /* SongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD967927884C02003EC3FF /* SongView.swift */; };
 		BFBD968527884C02003EC3FF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD967A27884C02003EC3FF /* MainView.swift */; };
 		BFBD968627884C02003EC3FF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD967A27884C02003EC3FF /* MainView.swift */; };
+		BFC09CC2279B25FE0052A728 /* SongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC09CC1279B25FE0052A728 /* SongViewModel.swift */; };
+		BFC09CC3279B25FE0052A728 /* SongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC09CC1279B25FE0052A728 /* SongViewModel.swift */; };
+		BFC09CC6279C18280052A728 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC09CC5279C18280052A728 /* ImageExtensions.swift */; };
+		BFC09CC7279C18280052A728 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC09CC5279C18280052A728 /* ImageExtensions.swift */; };
+		BFC09CC9279C187E0052A728 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC09CC8279C187E0052A728 /* ColorExtensions.swift */; };
+		BFC09CCA279C187E0052A728 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC09CC8279C187E0052A728 /* ColorExtensions.swift */; };
+		BFC09CCD279C24E10052A728 /* Anyway - Genesis.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BFC09CCC279C24E10052A728 /* Anyway - Genesis.mp3 */; };
+		BFC09CCE279C24E10052A728 /* Anyway - Genesis.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BFC09CCC279C24E10052A728 /* Anyway - Genesis.mp3 */; };
+		BFC09CD0279C518E0052A728 /* The Return Of The Giant Hogweed.flac in Resources */ = {isa = PBXBuildFile; fileRef = BFC09CCF279C518E0052A728 /* The Return Of The Giant Hogweed.flac */; };
+		BFC09CD1279C518E0052A728 /* The Return Of The Giant Hogweed.flac in Resources */ = {isa = PBXBuildFile; fileRef = BFC09CCF279C518E0052A728 /* The Return Of The Giant Hogweed.flac */; };
 		BFCE1E612788452300E4C482 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCE1E602788452300E4C482 /* Tests_iOS.swift */; };
 		BFCE1E632788452300E4C482 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCE1E622788452300E4C482 /* Tests_iOSLaunchTests.swift */; };
 		BFCE1E6D2788452300E4C482 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCE1E6C2788452300E4C482 /* Tests_macOS.swift */; };
@@ -118,6 +134,10 @@
 		BF1F67C02790A701003BA412 /* MidiEndpointCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiEndpointCollection.swift; sourceTree = "<group>"; };
 		BF1F67C72792DE88003BA412 /* guitar-dashboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "guitar-dashboardTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1F67C92792DE88003BA412 /* guitar_dashboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guitar_dashboardTests.swift; sourceTree = "<group>"; };
+		BF36A88B279D70740090C0A0 /* PlayerTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTime.swift; sourceTree = "<group>"; };
+		BF36A88E279D70A80090C0A0 /* TimeConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConstant.swift; sourceTree = "<group>"; };
+		BF36A891279D72620090C0A0 /* PlaybackValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackValue.swift; sourceTree = "<group>"; };
+		BF36A894279D78310090C0A0 /* guitar-dashboard--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "guitar-dashboard--iOS--Info.plist"; sourceTree = "<group>"; };
 		BF553646278E03AA00E0770C /* MidiEndpointMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiEndpointMonitor.swift; sourceTree = "<group>"; };
 		BFAEADAB278B363100466ADE /* MidiPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiPacket.swift; sourceTree = "<group>"; };
 		BFBD962927884A35003EC3FF /* DIContainerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIContainerProtocol.swift; sourceTree = "<group>"; };
@@ -150,6 +170,11 @@
 		BFBD967827884C02003EC3FF /* PatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatchView.swift; sourceTree = "<group>"; };
 		BFBD967927884C02003EC3FF /* SongView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongView.swift; sourceTree = "<group>"; };
 		BFBD967A27884C02003EC3FF /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		BFC09CC1279B25FE0052A728 /* SongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewModel.swift; sourceTree = "<group>"; };
+		BFC09CC5279C18280052A728 /* ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
+		BFC09CC8279C187E0052A728 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		BFC09CCC279C24E10052A728 /* Anyway - Genesis.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Anyway - Genesis.mp3"; sourceTree = "<group>"; };
+		BFC09CCF279C518E0052A728 /* The Return Of The Giant Hogweed.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = "The Return Of The Giant Hogweed.flac"; sourceTree = "<group>"; };
 		BFCE1E462788452100E4C482 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		BFCE1E472788452100E4C482 /* guitar_dashboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guitar_dashboardApp.swift; sourceTree = "<group>"; };
 		BFCE1E482788452100E4C482 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -251,6 +276,10 @@
 				BFBD964927884B59003EC3FF /* ProgramModel.swift */,
 				BFBD964D27884B59003EC3FF /* SongModel.swift */,
 				BFBD964F27884B5A003EC3FF /* TrackModel.swift */,
+				BFC09CC1279B25FE0052A728 /* SongViewModel.swift */,
+				BF36A88B279D70740090C0A0 /* PlayerTime.swift */,
+				BF36A88E279D70A80090C0A0 /* TimeConstant.swift */,
+				BF36A891279D72620090C0A0 /* PlaybackValue.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -281,9 +310,28 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		BFC09CC4279C180F0052A728 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BFC09CC5279C18280052A728 /* ImageExtensions.swift */,
+				BFC09CC8279C187E0052A728 /* ColorExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BFC09CCB279C23CA0052A728 /* Tracks */ = {
+			isa = PBXGroup;
+			children = (
+				BFC09CCF279C518E0052A728 /* The Return Of The Giant Hogweed.flac */,
+				BFC09CCC279C24E10052A728 /* Anyway - Genesis.mp3 */,
+			);
+			path = Tracks;
+			sourceTree = "<group>";
+		};
 		BFCE1E3F2788452100E4C482 = {
 			isa = PBXGroup;
 			children = (
+				BF36A894279D78310090C0A0 /* guitar-dashboard--iOS--Info.plist */,
 				BFCE1E442788452100E4C482 /* Shared */,
 				BFCE1E562788452300E4C482 /* macOS */,
 				BFCE1E5F2788452300E4C482 /* Tests iOS */,
@@ -296,6 +344,8 @@
 		BFCE1E442788452100E4C482 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BFC09CCB279C23CA0052A728 /* Tracks */,
+				BFC09CC4279C180F0052A728 /* Extensions */,
 				BFBD967427884BE9003EC3FF /* Views */,
 				BFBD966127884B75003EC3FF /* Devices */,
 				BFBD964827884B38003EC3FF /* Models */,
@@ -503,6 +553,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC09CD0279C518E0052A728 /* The Return Of The Giant Hogweed.flac in Resources */,
+				BFC09CCD279C24E10052A728 /* Anyway - Genesis.mp3 in Resources */,
 				BFCE1E782788452300E4C482 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,6 +563,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFC09CD1279C518E0052A728 /* The Return Of The Giant Hogweed.flac in Resources */,
+				BFC09CCE279C24E10052A728 /* Anyway - Genesis.mp3 in Resources */,
 				BFCE1E792788452300E4C482 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,21 +601,25 @@
 				BFBD965F27884B5A003EC3FF /* PatchModel.swift in Sources */,
 				BFBD967227884B8C003EC3FF /* Library.swift in Sources */,
 				BFBD964227884AA0003EC3FF /* MidiOutputPort.swift in Sources */,
+				BF36A892279D72620090C0A0 /* PlaybackValue.swift in Sources */,
 				BFBD968327884C02003EC3FF /* SongView.swift in Sources */,
 				BFBD963C27884AA0003EC3FF /* MidiFactory.swift in Sources */,
 				BFBD967D27884C02003EC3FF /* ListLabView.swift in Sources */,
 				BFBD966827884B8C003EC3FF /* DeviceManagerProtocol.swift in Sources */,
 				BFBD965127884B5A003EC3FF /* ProgramModel.swift in Sources */,
 				BFCE1E722788452300E4C482 /* guitar_dashboardApp.swift in Sources */,
+				BFC09CC6279C18280052A728 /* ImageExtensions.swift in Sources */,
 				BFCE1E762788452300E4C482 /* Persistence.swift in Sources */,
 				BFBD964027884AA0003EC3FF /* MidiInfo.swift in Sources */,
 				BFBD968527884C02003EC3FF /* MainView.swift in Sources */,
 				BFAEADAC278B363100466ADE /* MidiPacket.swift in Sources */,
+				BFC09CC2279B25FE0052A728 /* SongViewModel.swift in Sources */,
 				BFCE1E702788452300E4C482 /* guitar_dashboard.xcdatamodeld in Sources */,
 				BFBD965727884B5A003EC3FF /* LibraryModel.swift in Sources */,
 				BFBD965527884B5A003EC3FF /* Entity.swift in Sources */,
 				BFBD964627884AA0003EC3FF /* MidiInputPort.swift in Sources */,
 				BFBD963A27884AA0003EC3FF /* FractalDevice.swift in Sources */,
+				BF36A88F279D70A80090C0A0 /* TimeConstant.swift in Sources */,
 				BFBD965B27884B5A003EC3FF /* MarkerModel.swift in Sources */,
 				BFBD967B27884C02003EC3FF /* LibraryView.swift in Sources */,
 				BFBD963627884AA0003EC3FF /* ProgramScene.swift in Sources */,
@@ -573,6 +631,8 @@
 				BFBD964427884AA0003EC3FF /* FractalDeviceProtocol.swift in Sources */,
 				BFBD965D27884B5A003EC3FF /* TrackModel.swift in Sources */,
 				BFBD963E27884AA0003EC3FF /* MidiFactoryProtocol.swift in Sources */,
+				BFC09CC9279C187E0052A728 /* ColorExtensions.swift in Sources */,
+				BF36A88C279D70740090C0A0 /* PlayerTime.swift in Sources */,
 				BFBD967F27884C02003EC3FF /* MidiPortsView.swift in Sources */,
 				BFBD963827884AA0003EC3FF /* MidiError.swift in Sources */,
 				BFCE1E742788452300E4C482 /* ContentView.swift in Sources */,
@@ -591,21 +651,25 @@
 				BFBD966027884B5A003EC3FF /* PatchModel.swift in Sources */,
 				BFBD967327884B8C003EC3FF /* Library.swift in Sources */,
 				BFBD964327884AA0003EC3FF /* MidiOutputPort.swift in Sources */,
+				BF36A893279D72620090C0A0 /* PlaybackValue.swift in Sources */,
 				BFBD968427884C02003EC3FF /* SongView.swift in Sources */,
 				BFBD963D27884AA0003EC3FF /* MidiFactory.swift in Sources */,
 				BFBD967E27884C02003EC3FF /* ListLabView.swift in Sources */,
 				BFBD966927884B8C003EC3FF /* DeviceManagerProtocol.swift in Sources */,
 				BFBD965227884B5A003EC3FF /* ProgramModel.swift in Sources */,
 				BFCE1E732788452300E4C482 /* guitar_dashboardApp.swift in Sources */,
+				BFC09CC7279C18280052A728 /* ImageExtensions.swift in Sources */,
 				BFCE1E772788452300E4C482 /* Persistence.swift in Sources */,
 				BFBD964127884AA0003EC3FF /* MidiInfo.swift in Sources */,
 				BFBD968627884C02003EC3FF /* MainView.swift in Sources */,
 				BFAEADAD278B363100466ADE /* MidiPacket.swift in Sources */,
+				BFC09CC3279B25FE0052A728 /* SongViewModel.swift in Sources */,
 				BFCE1E712788452300E4C482 /* guitar_dashboard.xcdatamodeld in Sources */,
 				BFBD965827884B5A003EC3FF /* LibraryModel.swift in Sources */,
 				BFBD965627884B5A003EC3FF /* Entity.swift in Sources */,
 				BFBD964727884AA0003EC3FF /* MidiInputPort.swift in Sources */,
 				BFBD963B27884AA0003EC3FF /* FractalDevice.swift in Sources */,
+				BF36A890279D70A80090C0A0 /* TimeConstant.swift in Sources */,
 				BFBD965C27884B5A003EC3FF /* MarkerModel.swift in Sources */,
 				BFBD967C27884C02003EC3FF /* LibraryView.swift in Sources */,
 				BFBD963727884AA0003EC3FF /* ProgramScene.swift in Sources */,
@@ -617,6 +681,8 @@
 				BFBD964527884AA0003EC3FF /* FractalDeviceProtocol.swift in Sources */,
 				BFBD965E27884B5A003EC3FF /* TrackModel.swift in Sources */,
 				BFBD963F27884AA0003EC3FF /* MidiFactoryProtocol.swift in Sources */,
+				BFC09CCA279C187E0052A728 /* ColorExtensions.swift in Sources */,
+				BF36A88D279D70740090C0A0 /* PlayerTime.swift in Sources */,
 				BFBD968027884C02003EC3FF /* MidiPortsView.swift in Sources */,
 				BFBD963927884AA0003EC3FF /* MidiError.swift in Sources */,
 				BFCE1E752788452300E4C482 /* ContentView.swift in Sources */,
@@ -826,9 +892,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = G2H863N884;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "guitar-dashboard--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -845,7 +913,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -856,9 +924,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = G2H863N884;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "guitar-dashboard--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -875,7 +945,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
