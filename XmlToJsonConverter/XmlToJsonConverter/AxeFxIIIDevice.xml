@@ -1,7 +1,7 @@
 <AxeFxII>
   <Library name="Nursery Cryme">
     <Patches name="The Musical Box">
-      <Track name="01 - The Musical Box.flac">
+      <Track name="01 - The Musical Box.mp3">
       </Track>
       <Patch>467</Patch>
       <Patch>468</Patch>
@@ -68,16 +68,16 @@
     <Patches name="Get'em Out By Friday" >
       <Track name="Get 'Em Out By Friday.mp3">
       </Track>
-      <Patch scene="1" name="Intro">507</Patch>
+      <Patch scene="1" name="Intro" message="Pedale Chiuso">507</Patch>
       <Patch scene="2" name="Intro Diatonic 1">507</Patch>
       <Patch scene="3" name="Intro Diatonic 2">507</Patch>
       <Patch scene="5" name="La-Re-Mi">000</Patch>
       <!--<Patch scene="2" name="Arpeggio1">099</Patch>-->
       <Patch scene="1" name="Arpeggio1">389</Patch>
       <Patch scene="4" name="Crescendo">454</Patch>
-      <Patch scene="1" name="La">409</Patch>
+      <Patch scene="2" name="La">443</Patch>
       <Patch scene="1" name="Arpeggio1">389</Patch>
-      <Patch scene="1" name="La">409</Patch>
+      <Patch scene="2" name="La">443</Patch>
       <Patch scene="1" name="Arpeggio1">389</Patch>
       <Patch scene="4" name="Crescendo">454</Patch>
       <!-- <Patch scene="1" name="Solo">401</Patch> -->
@@ -220,14 +220,14 @@
       <Patch name="Finale">509</Patch>
     </Patches>
     <Patches name="The Musical Box">
-      <Track name="01 - The Musical Box.flac">
+      <Track name="01 - The Musical Box.mp3">
       </Track>
       <Patch>467</Patch>
       <Patch>468</Patch>
       <Patch>465</Patch>
     </Patches>
     <Patches name="The Return of the Gian Hogweed">
-      <Track name="The Return Of The Giant Hogweed.flac">
+      <Track name="The Return Of The Giant Hogweed.mp3">
       </Track>
       <Patch name="intro" scene="1">475</Patch>
       <Patch name="-12" scene="2">508</Patch>

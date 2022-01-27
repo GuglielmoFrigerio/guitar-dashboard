@@ -28,15 +28,22 @@ class DevicesManager: DeviceManagerProtocol {
         }
     }
     
-    init() {
-        midiFactory = nil
-        libraryModels = []
+    private func loadTracks() -> Void {
+        guard let loader = DIContainer.shared.resolve(type: TrackLoaderProtocol.self) else {
+            logger.warning("Unable to find and instance of type TrackLoaderProtocol")
+            return
+        }
         
-        let fm = FileManager.default;
-        let directoryURL = fm.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        for library in libraries {
+            library.loadTracks(loader: loader)
+        }
+    }
+    
+    private func logDocumentDirectory() {
+        let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         
         do {
-            let items = try fm.contentsOfDirectory(atPath: directoryURL.path)
+            let items = try FileManager.default.contentsOfDirectory(atPath: directoryURL.path)
             for item in items {
                 logger.info("file: \(item)")
             }
@@ -44,38 +51,32 @@ class DevicesManager: DeviceManagerProtocol {
         } catch {
             logger.warning("contentsOfDirectory failed")
         }
+    }
+    
+    private func writeTextFile() {
+        let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileURL = URL(fileURLWithPath: "myFile", relativeTo: directoryURL).appendingPathExtension("txt")
         
-//        let fileURL = URL(fileURLWithPath: "myFile", relativeTo: directoryURL).appendingPathExtension("txt")
-//        
-//        
-//        // Create data to be saved
-//        let myString = "Saving data with FileManager is easy!"
-//        guard let data = myString.data(using: .utf8) else {
-//            print("Unable to convert string to data")
-//            return
-//        }
-//        // Save the data
-//        do {
-//         try data.write(to: fileURL)
-//         print("File saved: \(fileURL.absoluteURL)")
-//        } catch {
-//         // Catch any errors
-//         print(error.localizedDescription)
-//        }
-//        
-//        let url = URL(string: "http://192.168.1.58:5074/api/Track/in%20the%20Cage%20-%20Genesis.mp3")!
-//
-//        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-//            guard let data = data else { return }
-//            let fileURL = URL(fileURLWithPath: "testTrack", relativeTo: directoryURL).appendingPathExtension("mp3")
-//            do {
-//                try data.write(to: fileURL)
-//            } catch {
-//                self.logger.warning("data.write failed")
-//            }
-//        }
-//
-//        task.resume()
+        
+        // Create data to be saved
+        let myString = "Saving data with FileManager is easy!"
+        guard let data = myString.data(using: .utf8) else {
+            print("Unable to convert string to data")
+            return
+        }
+        
+        // Save the data
+        do {
+         try data.write(to: fileURL)
+            logger.info("File saved: \(fileURL.absoluteURL)")
+        } catch {
+            logger.info("File write failed: '\(error.localizedDescription)'")
+        }
+    }
+    
+    init() {
+        midiFactory = nil
+        libraryModels = []
     }
 
     init(libraries: [LibraryModel]) {
@@ -84,7 +85,8 @@ class DevicesManager: DeviceManagerProtocol {
         midiFactory = MidiFactory(clientName: "FractalClient")
         if let uwMidiFactory = midiFactory {
             DIContainer.shared.register(type: MidiFactoryProtocol.self, component: uwMidiFactory)
-                        
+            DIContainer.shared.register(type: TrackLoaderProtocol.self, component: TrackLoader())
+                                    
             endpointMonitor = MidiEndpointMonitor(midiFactory: uwMidiFactory)
             endpointMonitor?.subscribeSource(name: "BT200S-4 v2.3.1 9BCD Bluetooth") {
                 midiInpuPort in
@@ -115,6 +117,9 @@ class DevicesManager: DeviceManagerProtocol {
         }
         
         endpointMonitor?.update()
+        
+//        loadTracks()
+        logDocumentDirectory()
     }
     
     func send (patch: Patch) {

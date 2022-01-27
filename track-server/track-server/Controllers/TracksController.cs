@@ -23,8 +23,6 @@ namespace track_server.Controllers
         [HttpGet("{trackName}", Name = "Get1")]
         public IActionResult Get(string trackName)
         {
-            var bla = test();
-
             var stream = new System.IO.FileStream($"/Users/guglielmofrigerio/Projects/Guglielmo/guitar-dashboard/track-server/track-server/Tracks/{trackName}", System.IO.FileMode.Open);
             return File(stream, "application/mpeg");
         }

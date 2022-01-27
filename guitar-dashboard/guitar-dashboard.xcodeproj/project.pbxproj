@@ -86,10 +86,6 @@
 		BFC09CC7279C18280052A728 /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC09CC5279C18280052A728 /* ImageExtensions.swift */; };
 		BFC09CC9279C187E0052A728 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC09CC8279C187E0052A728 /* ColorExtensions.swift */; };
 		BFC09CCA279C187E0052A728 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC09CC8279C187E0052A728 /* ColorExtensions.swift */; };
-		BFC09CCD279C24E10052A728 /* Anyway - Genesis.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BFC09CCC279C24E10052A728 /* Anyway - Genesis.mp3 */; };
-		BFC09CCE279C24E10052A728 /* Anyway - Genesis.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BFC09CCC279C24E10052A728 /* Anyway - Genesis.mp3 */; };
-		BFC09CD0279C518E0052A728 /* The Return Of The Giant Hogweed.flac in Resources */ = {isa = PBXBuildFile; fileRef = BFC09CCF279C518E0052A728 /* The Return Of The Giant Hogweed.flac */; };
-		BFC09CD1279C518E0052A728 /* The Return Of The Giant Hogweed.flac in Resources */ = {isa = PBXBuildFile; fileRef = BFC09CCF279C518E0052A728 /* The Return Of The Giant Hogweed.flac */; };
 		BFCE1E612788452300E4C482 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCE1E602788452300E4C482 /* Tests_iOS.swift */; };
 		BFCE1E632788452300E4C482 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCE1E622788452300E4C482 /* Tests_iOSLaunchTests.swift */; };
 		BFCE1E6D2788452300E4C482 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCE1E6C2788452300E4C482 /* Tests_macOS.swift */; };
@@ -104,6 +100,12 @@
 		BFCE1E772788452300E4C482 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCE1E492788452100E4C482 /* Persistence.swift */; };
 		BFCE1E782788452300E4C482 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFCE1E4A2788452300E4C482 /* Assets.xcassets */; };
 		BFCE1E792788452300E4C482 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFCE1E4A2788452300E4C482 /* Assets.xcassets */; };
+		BFE4F77127A2D8A600F8FBC1 /* TrackLoaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4F77027A2D8A600F8FBC1 /* TrackLoaderProtocol.swift */; };
+		BFE4F77227A2D8A600F8FBC1 /* TrackLoaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4F77027A2D8A600F8FBC1 /* TrackLoaderProtocol.swift */; };
+		BFE4F77427A2D91200F8FBC1 /* TrackLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4F77327A2D91200F8FBC1 /* TrackLoader.swift */; };
+		BFE4F77527A2D91200F8FBC1 /* TrackLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4F77327A2D91200F8FBC1 /* TrackLoader.swift */; };
+		BFE4F77727A2DA3B00F8FBC1 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4F77627A2DA3B00F8FBC1 /* StringExtensions.swift */; };
+		BFE4F77827A2DA3B00F8FBC1 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4F77627A2DA3B00F8FBC1 /* StringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,8 +175,6 @@
 		BFC09CC1279B25FE0052A728 /* SongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewModel.swift; sourceTree = "<group>"; };
 		BFC09CC5279C18280052A728 /* ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
 		BFC09CC8279C187E0052A728 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
-		BFC09CCC279C24E10052A728 /* Anyway - Genesis.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Anyway - Genesis.mp3"; sourceTree = "<group>"; };
-		BFC09CCF279C518E0052A728 /* The Return Of The Giant Hogweed.flac */ = {isa = PBXFileReference; lastKnownFileType = file; path = "The Return Of The Giant Hogweed.flac"; sourceTree = "<group>"; };
 		BFCE1E462788452100E4C482 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		BFCE1E472788452100E4C482 /* guitar_dashboardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guitar_dashboardApp.swift; sourceTree = "<group>"; };
 		BFCE1E482788452100E4C482 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -189,6 +189,9 @@
 		BFCE1E682788452300E4C482 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFCE1E6C2788452300E4C482 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		BFCE1E6E2788452300E4C482 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		BFE4F77027A2D8A600F8FBC1 /* TrackLoaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackLoaderProtocol.swift; sourceTree = "<group>"; };
+		BFE4F77327A2D91200F8FBC1 /* TrackLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackLoader.swift; sourceTree = "<group>"; };
+		BFE4F77627A2DA3B00F8FBC1 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +245,8 @@
 			isa = PBXGroup;
 			children = (
 				BFBD962927884A35003EC3FF /* DIContainerProtocol.swift */,
+				BFE4F77027A2D8A600F8FBC1 /* TrackLoaderProtocol.swift */,
+				BFE4F77327A2D91200F8FBC1 /* TrackLoader.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 			children = (
 				BFC09CC5279C18280052A728 /* ImageExtensions.swift */,
 				BFC09CC8279C187E0052A728 /* ColorExtensions.swift */,
+				BFE4F77627A2DA3B00F8FBC1 /* StringExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -322,8 +328,6 @@
 		BFC09CCB279C23CA0052A728 /* Tracks */ = {
 			isa = PBXGroup;
 			children = (
-				BFC09CCF279C518E0052A728 /* The Return Of The Giant Hogweed.flac */,
-				BFC09CCC279C24E10052A728 /* Anyway - Genesis.mp3 */,
 			);
 			path = Tracks;
 			sourceTree = "<group>";
@@ -553,8 +557,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFC09CD0279C518E0052A728 /* The Return Of The Giant Hogweed.flac in Resources */,
-				BFC09CCD279C24E10052A728 /* Anyway - Genesis.mp3 in Resources */,
 				BFCE1E782788452300E4C482 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,8 +565,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFC09CD1279C518E0052A728 /* The Return Of The Giant Hogweed.flac in Resources */,
-				BFC09CCE279C24E10052A728 /* Anyway - Genesis.mp3 in Resources */,
 				BFCE1E792788452300E4C482 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,6 +610,7 @@
 				BFCE1E722788452300E4C482 /* guitar_dashboardApp.swift in Sources */,
 				BFC09CC6279C18280052A728 /* ImageExtensions.swift in Sources */,
 				BFCE1E762788452300E4C482 /* Persistence.swift in Sources */,
+				BFE4F77727A2DA3B00F8FBC1 /* StringExtensions.swift in Sources */,
 				BFBD964027884AA0003EC3FF /* MidiInfo.swift in Sources */,
 				BFBD968527884C02003EC3FF /* MainView.swift in Sources */,
 				BFAEADAC278B363100466ADE /* MidiPacket.swift in Sources */,
@@ -632,6 +633,7 @@
 				BFBD965D27884B5A003EC3FF /* TrackModel.swift in Sources */,
 				BFBD963E27884AA0003EC3FF /* MidiFactoryProtocol.swift in Sources */,
 				BFC09CC9279C187E0052A728 /* ColorExtensions.swift in Sources */,
+				BFE4F77427A2D91200F8FBC1 /* TrackLoader.swift in Sources */,
 				BF36A88C279D70740090C0A0 /* PlayerTime.swift in Sources */,
 				BFBD967F27884C02003EC3FF /* MidiPortsView.swift in Sources */,
 				BFBD963827884AA0003EC3FF /* MidiError.swift in Sources */,
@@ -640,6 +642,7 @@
 				BFBD966E27884B8C003EC3FF /* Song.swift in Sources */,
 				BFBD967027884B8C003EC3FF /* Patch.swift in Sources */,
 				BFBD965927884B5A003EC3FF /* SongModel.swift in Sources */,
+				BFE4F77127A2D8A600F8FBC1 /* TrackLoaderProtocol.swift in Sources */,
 				BF1F67C12790A701003BA412 /* MidiEndpointCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -660,6 +663,7 @@
 				BFCE1E732788452300E4C482 /* guitar_dashboardApp.swift in Sources */,
 				BFC09CC7279C18280052A728 /* ImageExtensions.swift in Sources */,
 				BFCE1E772788452300E4C482 /* Persistence.swift in Sources */,
+				BFE4F77827A2DA3B00F8FBC1 /* StringExtensions.swift in Sources */,
 				BFBD964127884AA0003EC3FF /* MidiInfo.swift in Sources */,
 				BFBD968627884C02003EC3FF /* MainView.swift in Sources */,
 				BFAEADAD278B363100466ADE /* MidiPacket.swift in Sources */,
@@ -682,6 +686,7 @@
 				BFBD965E27884B5A003EC3FF /* TrackModel.swift in Sources */,
 				BFBD963F27884AA0003EC3FF /* MidiFactoryProtocol.swift in Sources */,
 				BFC09CCA279C187E0052A728 /* ColorExtensions.swift in Sources */,
+				BFE4F77527A2D91200F8FBC1 /* TrackLoader.swift in Sources */,
 				BF36A88D279D70740090C0A0 /* PlayerTime.swift in Sources */,
 				BFBD968027884C02003EC3FF /* MidiPortsView.swift in Sources */,
 				BFBD963927884AA0003EC3FF /* MidiError.swift in Sources */,
@@ -690,6 +695,7 @@
 				BFBD966F27884B8C003EC3FF /* Song.swift in Sources */,
 				BFBD967127884B8C003EC3FF /* Patch.swift in Sources */,
 				BFBD965A27884B5A003EC3FF /* SongModel.swift in Sources */,
+				BFE4F77227A2D8A600F8FBC1 /* TrackLoaderProtocol.swift in Sources */,
 				BF1F67C22790A701003BA412 /* MidiEndpointCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

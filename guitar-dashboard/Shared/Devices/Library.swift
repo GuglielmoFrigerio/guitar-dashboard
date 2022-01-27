@@ -26,4 +26,10 @@ class Library: Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(name)
     }
+    
+    func loadTracks(loader: TrackLoaderProtocol) {
+        for song in songs {
+            song.loadTrack(loader: loader)
+        }
+    }
 }

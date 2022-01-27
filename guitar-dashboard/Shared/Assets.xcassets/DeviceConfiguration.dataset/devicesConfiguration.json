@@ -7,7 +7,7 @@
         {
           "name": "The Musical Box",
           "track": {
-            "name": "01 - The Musical Box.flac",
+            "name": "01 - The Musical Box.mp3",
             "markers": []
           },
           "patches": [
@@ -384,8 +384,8 @@
               "name": "La",
               "axeFx2": null,
               "axeFx3": {
-                "number": 409,
-                "scene": 1
+                "number": 443,
+                "scene": 2
               }
             },
             {
@@ -400,8 +400,8 @@
               "name": "La",
               "axeFx2": null,
               "axeFx3": {
-                "number": 409,
-                "scene": 1
+                "number": 443,
+                "scene": 2
               }
             },
             {
@@ -1225,7 +1225,7 @@
         {
           "name": "The Musical Box",
           "track": {
-            "name": "01 - The Musical Box.flac",
+            "name": "01 - The Musical Box.mp3",
             "markers": []
           },
           "patches": [
@@ -1258,7 +1258,7 @@
         {
           "name": "The Return of the Gian Hogweed",
           "track": {
-            "name": "The Return Of The Giant Hogweed.flac",
+            "name": "The Return Of The Giant Hogweed.mp3",
             "markers": []
           },
           "patches": [

@@ -65,4 +65,8 @@ class Song: Hashable {
         self.deviceManager.unsubscribePedaboard()
         self.logger.log("song \(self.name) deactivated")
     }
+    
+    func loadTrack(loader: TrackLoaderProtocol) {
+        loader.loadTrack(name: self.trackName)
+    }
 }
