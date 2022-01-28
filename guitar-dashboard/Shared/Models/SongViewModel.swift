@@ -148,15 +148,10 @@ class SongViewModel: NSObject, ObservableObject {
         
     }
     
-    private func setupAudio() {
+    private func setupAudio(trackName: String) {
+        let parts = trackName.parseFilename()
         let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let fileURL = URL(fileURLWithPath: "testTrack", relativeTo: directoryURL).appendingPathExtension("mp3")
-//        guard let fileURL = Bundle.main.url(
-//            forResource: "Anyway - Genesis",
-//            withExtension: "mp3")
-//        else {
-//            return
-//        }
+        let fileURL = URL(fileURLWithPath: parts.0, relativeTo: directoryURL).appendingPathExtension(parts.1)
         
         do {
             let file = try AVAudioFile(forReading: fileURL)
@@ -186,14 +181,26 @@ class SongViewModel: NSObject, ObservableObject {
         timeEffect.pitch = 1200 * Float(selectedPitch.value)
     }
     
+    private func setupDisplayLink() {
+        displayLink = CADisplayLink(
+            target: self,
+            selector: #selector(updateDisplay))
+        displayLink?.add(to: .current, forMode: .default)
+        displayLink?.isPaused = true
+    }
+    
+    override init() {
+      super.init()
+
+      setupDisplayLink()
+    }
+
     
     @objc private func updateDisplay() {
-        // 1
         currentPosition = currentFrame + seekFrame
         currentPosition = max(currentPosition, 0)
         currentPosition = min(currentPosition, audioLengthSamples)
         
-        // 2
         if currentPosition >= audioLengthSamples {
             player.stop()
             
@@ -206,7 +213,6 @@ class SongViewModel: NSObject, ObservableObject {
             disconnectVolumeTap()
         }
         
-        // 3
         playerProgress = Double(currentPosition) / Double(audioLengthSamples)
         
         let time = Double(currentPosition) / audioSampleRate
@@ -253,11 +259,20 @@ class SongViewModel: NSObject, ObservableObject {
         
     }
     
+    var stoppable: Bool {
+        get {
+            return currentPosition > 0
+        }
+    }
     
-    init(trackName: String) {
-        super.init()
-        logger.info("init")
-        setupAudio()
+    func stop() {
+        isPlaying = false
+        if player.isPlaying {
+            displayLink?.isPaused = true
+            disconnectVolumeTap()
+
+            player.stop()
+        }
     }
     
     func skip(forwards: Bool) {
@@ -294,6 +309,10 @@ class SongViewModel: NSObject, ObservableObject {
     func dispose() {
         player.stop()
         engine.stop()
+    }
+    
+    func setTrackName(_ trackName: String) {
+        setupAudio(trackName: trackName)
     }
     
     let allPlaybackRates: [PlaybackValue] = [

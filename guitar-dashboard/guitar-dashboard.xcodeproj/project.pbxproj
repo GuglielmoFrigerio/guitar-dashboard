@@ -106,6 +106,8 @@
 		BFE4F77527A2D91200F8FBC1 /* TrackLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4F77327A2D91200F8FBC1 /* TrackLoader.swift */; };
 		BFE4F77727A2DA3B00F8FBC1 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4F77627A2DA3B00F8FBC1 /* StringExtensions.swift */; };
 		BFE4F77827A2DA3B00F8FBC1 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4F77627A2DA3B00F8FBC1 /* StringExtensions.swift */; };
+		BFE4F77A27A3226500F8FBC1 /* KeyboardCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4F77927A3226500F8FBC1 /* KeyboardCapture.swift */; };
+		BFE4F77B27A3226500F8FBC1 /* KeyboardCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4F77927A3226500F8FBC1 /* KeyboardCapture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +194,7 @@
 		BFE4F77027A2D8A600F8FBC1 /* TrackLoaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackLoaderProtocol.swift; sourceTree = "<group>"; };
 		BFE4F77327A2D91200F8FBC1 /* TrackLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackLoader.swift; sourceTree = "<group>"; };
 		BFE4F77627A2DA3B00F8FBC1 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		BFE4F77927A3226500F8FBC1 /* KeyboardCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardCapture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +250,7 @@
 				BFBD962927884A35003EC3FF /* DIContainerProtocol.swift */,
 				BFE4F77027A2D8A600F8FBC1 /* TrackLoaderProtocol.swift */,
 				BFE4F77327A2D91200F8FBC1 /* TrackLoader.swift */,
+				BFE4F77927A3226500F8FBC1 /* KeyboardCapture.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -604,6 +608,7 @@
 				BF36A892279D72620090C0A0 /* PlaybackValue.swift in Sources */,
 				BFBD968327884C02003EC3FF /* SongView.swift in Sources */,
 				BFBD963C27884AA0003EC3FF /* MidiFactory.swift in Sources */,
+				BFE4F77A27A3226500F8FBC1 /* KeyboardCapture.swift in Sources */,
 				BFBD967D27884C02003EC3FF /* ListLabView.swift in Sources */,
 				BFBD966827884B8C003EC3FF /* DeviceManagerProtocol.swift in Sources */,
 				BFBD965127884B5A003EC3FF /* ProgramModel.swift in Sources */,
@@ -657,6 +662,7 @@
 				BF36A893279D72620090C0A0 /* PlaybackValue.swift in Sources */,
 				BFBD968427884C02003EC3FF /* SongView.swift in Sources */,
 				BFBD963D27884AA0003EC3FF /* MidiFactory.swift in Sources */,
+				BFE4F77B27A3226500F8FBC1 /* KeyboardCapture.swift in Sources */,
 				BFBD967E27884C02003EC3FF /* ListLabView.swift in Sources */,
 				BFBD966927884B8C003EC3FF /* DeviceManagerProtocol.swift in Sources */,
 				BFBD965227884B5A003EC3FF /* ProgramModel.swift in Sources */,
