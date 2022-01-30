@@ -8,7 +8,7 @@
 import SwiftUI
 import os
 
-struct SongView: View {
+struct SongView: View, PedalboardTargetProtocol {
     let song: Song
     @State private var selected : Int? = 0
     @StateObject var viewModel: SongViewModel = SongViewModel()
@@ -247,10 +247,7 @@ struct SongView: View {
         }
         .onAppear {
             viewModel.setTrackName(self.song.trackName)
-            self.song.activate {
-                index in
-                self.selected = index
-            }
+            self.song.activate(pedalboardTarget: self)
             if let index = self.selected {
                 self.song.selectPatch(index: index)
             }
@@ -259,5 +256,17 @@ struct SongView: View {
             self.song.deactivate()
             viewModel.dispose()
         }
+    }
+    
+    func patchSelected(index: Int) {
+        self.selected = index
+    }
+    
+    func playOrPause() {
+        viewModel.playOrPause()
+    }
+    
+    func stop() {
+        viewModel.stop()
     }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF060B4127A6A8B900BA7761 /* PedalboardTargetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF060B4027A6A8B900BA7761 /* PedalboardTargetProtocol.swift */; };
+		BF060B4227A6A8B900BA7761 /* PedalboardTargetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF060B4027A6A8B900BA7761 /* PedalboardTargetProtocol.swift */; };
 		BF1F67C12790A701003BA412 /* MidiEndpointCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F67C02790A701003BA412 /* MidiEndpointCollection.swift */; };
 		BF1F67C22790A701003BA412 /* MidiEndpointCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F67C02790A701003BA412 /* MidiEndpointCollection.swift */; };
 		BF1F67CA2792DE88003BA412 /* guitar_dashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F67C92792DE88003BA412 /* guitar_dashboardTests.swift */; };
@@ -139,6 +141,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF060B4027A6A8B900BA7761 /* PedalboardTargetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalboardTargetProtocol.swift; sourceTree = "<group>"; };
 		BF1F67C02790A701003BA412 /* MidiEndpointCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiEndpointCollection.swift; sourceTree = "<group>"; };
 		BF1F67C72792DE88003BA412 /* guitar-dashboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "guitar-dashboardTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1F67C92792DE88003BA412 /* guitar_dashboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guitar_dashboardTests.swift; sourceTree = "<group>"; };
@@ -316,6 +319,7 @@
 				BFBD966627884B8C003EC3FF /* Patch.swift */,
 				BFBD966327884B8C003EC3FF /* Pedalboard.swift */,
 				BFBD966527884B8C003EC3FF /* Song.swift */,
+				BF060B4027A6A8B900BA7761 /* PedalboardTargetProtocol.swift */,
 			);
 			path = Devices;
 			sourceTree = "<group>";
@@ -626,6 +630,7 @@
 				BFBD963C27884AA0003EC3FF /* MidiFactory.swift in Sources */,
 				BFE4F77A27A3226500F8FBC1 /* KeyboardCapture.swift in Sources */,
 				BFBD967D27884C02003EC3FF /* ListLabView.swift in Sources */,
+				BF060B4127A6A8B900BA7761 /* PedalboardTargetProtocol.swift in Sources */,
 				BF60152527A59DB100393D77 /* StatusBarViewModel.swift in Sources */,
 				BFBD966827884B8C003EC3FF /* DeviceManagerProtocol.swift in Sources */,
 				BFBD965127884B5A003EC3FF /* ProgramModel.swift in Sources */,
@@ -682,6 +687,7 @@
 				BFBD963D27884AA0003EC3FF /* MidiFactory.swift in Sources */,
 				BFE4F77B27A3226500F8FBC1 /* KeyboardCapture.swift in Sources */,
 				BFBD967E27884C02003EC3FF /* ListLabView.swift in Sources */,
+				BF060B4227A6A8B900BA7761 /* PedalboardTargetProtocol.swift in Sources */,
 				BF60152627A59DB100393D77 /* StatusBarViewModel.swift in Sources */,
 				BFBD966927884B8C003EC3FF /* DeviceManagerProtocol.swift in Sources */,
 				BFBD965227884B5A003EC3FF /* ProgramModel.swift in Sources */,

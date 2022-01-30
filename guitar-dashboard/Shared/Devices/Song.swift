@@ -42,24 +42,25 @@ class Song: Hashable {
         self.patches[index].select()
     }
     
-    func activate(onPatchSelected: @escaping (Int) -> Void) {
-        self.onPatchSelected = onPatchSelected
+    func activate(pedalboardTarget: PedalboardTargetProtocol) {
         self.deviceManager.subscribePedalboard {
             pedalboardKey in
             self.logger.log("pedalboard key received \(pedalboardKey)")
-            if let patchSelected = self.onPatchSelected {
-                if pedalboardKey == .first && self.currentSelection > 0 {
-                    self.currentSelection -= 1
-                    patchSelected(self.currentSelection)
-                } else if pedalboardKey == .second && self.currentSelection < (self.patches.count - 1) {
-                    self.currentSelection += 1
-                    patchSelected(self.currentSelection)
-                }
+            if pedalboardKey == .first && self.currentSelection > 0 {
+                self.currentSelection -= 1
+                pedalboardTarget.patchSelected(index: self.currentSelection)
+            } else if pedalboardKey == .second && self.currentSelection < (self.patches.count - 1) {
+                self.currentSelection += 1
+                pedalboardTarget.patchSelected(index: self.currentSelection)
+            } else if pedalboardKey == .third {
+                pedalboardTarget.playOrPause()
+            } else if pedalboardKey == .fourth {
+                pedalboardTarget.stop()
             }
         }
         self.logger.log("song \(self.name) activated")
     }
-    
+        
     func deactivate() {
         self.onPatchSelected = nil
         self.deviceManager.unsubscribePedaboard()
