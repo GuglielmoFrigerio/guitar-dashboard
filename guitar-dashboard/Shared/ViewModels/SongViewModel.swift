@@ -349,7 +349,7 @@ class SongViewModel: NSObject, ObservableObject {
             objectWillChange.send()
         }
     }
-    var playbackRateIndex: Int = 1 {
+    var playbackRateIndex: Int = 4 {
         willSet {
             objectWillChange.send()
         }

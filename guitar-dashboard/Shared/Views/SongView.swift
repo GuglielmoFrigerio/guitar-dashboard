@@ -18,7 +18,7 @@ struct SongView: View {
         guard let selected = selected else {
             return
         }
-
+        
         if (selected > 0) {
             self.selected = selected - 1
         }
@@ -28,7 +28,7 @@ struct SongView: View {
         guard let selected = selected else {
             return
         }
-
+        
         if (selected < (song.patches.count - 1)) {
             self.selected = selected + 1
         }
@@ -54,7 +54,7 @@ struct SongView: View {
             .frame(width: 40)
             .font(.system(size: 45))
             .keyboardShortcut("a", modifiers: [.command])
-
+            
             Spacer()
             
             Button {
@@ -73,7 +73,7 @@ struct SongView: View {
             .frame(width: 40)
             .font(.system(size: 45))
             .keyboardShortcut("b", modifiers: [.command])
-
+            
             Spacer()
         }
     }
@@ -157,7 +157,7 @@ struct SongView: View {
             .font(.system(size: 45))
             .disabled(!viewModel.isPlaying)
             .keyboardShortcut("d", modifiers: [.command])
-
+            
             Spacer()
             
             Button {
@@ -176,7 +176,7 @@ struct SongView: View {
             .frame(width: 40)
             .font(.system(size: 45))
             .keyboardShortcut("c", modifiers: [.command])
-
+            
             Spacer()
             
             Button {
@@ -208,15 +208,11 @@ struct SongView: View {
                 Text(viewModel.playerTime.remainingText)
             }
             .font(.system(size: 14, weight: .semibold))
-            
-            Spacer()
-            
+                        
             audioControlButtons
                 .disabled(!viewModel.isPlayerReady)
                 .padding(.bottom)
-            
-            Spacer()
-            
+                        
             adjustmentControlsView
         }
         .padding(.horizontal)
@@ -236,6 +232,7 @@ struct SongView: View {
                 List() {
                     ForEach(song.patches, id: \.self) { patch in
                         PatchView(patch: patch, selectedPatch: self.$selected).id(patch.index)
+                            .background(patch.index == self.selected ? Color.indigo : Color.black)
                     }
                 }
                 .navigationTitle(song.name)
@@ -243,6 +240,7 @@ struct SongView: View {
                     self.song.selectPatch(index: value!)
                     scrollViewReader.scrollTo(selected)
                 }
+                .listStyle(SidebarListStyle())
             }
             patchView
             playerView

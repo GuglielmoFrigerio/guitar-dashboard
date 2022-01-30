@@ -27,19 +27,23 @@ struct ContentView: View {
         let data = asset.data
         let configRoot: ConfigRootModel = try! JSONDecoder().decode(ConfigRootModel.self, from: data)
         devicesManager = DevicesManager(libraries: configRoot.libraries)
+        DIContainer.shared.register(type: DeviceManagerProtocol.self, component: devicesManager)
     }
 
     var body: some View {
-        NavigationView() {
-            List() {
-                NavigationLink(destination: MainView(devicesManager)) {
-                    Text("Main View")
+        VStack {
+            NavigationView() {
+                List() {
+                    NavigationLink(destination: MainView(devicesManager)) {
+                        Text("Main View")
+                    }
+                    NavigationLink(destination: MidiPortsView()) {
+                        Text("List Midi Ports")
+                    }
                 }
-                NavigationLink(destination: MidiPortsView()) {
-                    Text("List Midi Ports")
-                }
+    //            .navigationBarTitle("Libraries")
             }
-//            .navigationBarTitle("Libraries")
+            StatusBarView()
         }
     }
 

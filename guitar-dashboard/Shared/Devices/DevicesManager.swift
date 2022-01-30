@@ -17,6 +17,7 @@ class DevicesManager: DeviceManagerProtocol {
     let logger: Logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "DevicesManager")
     var pedalboardKeySubscriber: ((PedalboardKey) -> Void)? = nil
     var endpointMonitor: MidiEndpointMonitor? = nil
+    private var onAxeFx3StatusChange: ((Bool) -> Void)? = nil
     
     private func pedalSourceInputAvailable(inputPort: MidiInputPort) {
         pedalBoard = Pedalboard(midiInputPort: inputPort, keyListener: pedalboardKeyHandler)
@@ -101,8 +102,10 @@ class DevicesManager: DeviceManagerProtocol {
                 midiOutputPort in
                 if let uwMidiOutputPort = midiOutputPort {
                     self.axeFx3Device = FractalDevice(midiOutputPort: uwMidiOutputPort, deviceName: "Axe-Fx III")
+                    self.onAxeFx3StatusChange?(true)
                 } else {
                     self.axeFx3Device = nil
+                    self.onAxeFx3StatusChange?(false)
                 }
             }
         }
@@ -139,4 +142,15 @@ class DevicesManager: DeviceManagerProtocol {
     func unsubscribePedaboard() {
         pedalboardKeySubscriber = nil
     }
+    
+    @inlinable public func onAxeFx3StatusChange(perform action: ((Bool) -> Void)? = nil) {
+        self.onAxeFx3StatusChange = action
+    }
+    
+    var isAxeFx3Connected: Bool {
+        get {
+            return self.axeFx3Device != nil
+        }
+    }
+
 }

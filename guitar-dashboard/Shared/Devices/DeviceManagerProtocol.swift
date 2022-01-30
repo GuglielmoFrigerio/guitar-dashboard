@@ -13,5 +13,8 @@ protocol DeviceManagerProtocol {
     func send(patch: Patch)
     
     func subscribePedalboard(onPedalboardKey: @escaping (PedalboardKey) -> Void)
-    func unsubscribePedaboard()    
+    func unsubscribePedaboard()
+    
+    var isAxeFx3Connected: Bool { get }
+    func onAxeFx3StatusChange(perform action: ((Bool) -> Void)?)
 }

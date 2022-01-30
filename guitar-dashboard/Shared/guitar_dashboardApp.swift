@@ -26,6 +26,10 @@ struct guitar_dashboardApp: App {
     let persistenceController = PersistenceController.shared
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
+    init() {
+        UIApplication.shared.isIdleTimerDisabled = true
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -33,3 +37,4 @@ struct guitar_dashboardApp: App {
         }
     }
 }
+ 
