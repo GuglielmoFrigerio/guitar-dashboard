@@ -2,6 +2,62 @@
   "name": null,
   "libraries": [
     {
+      "name": "Backing Tracks",
+      "songs":[
+        {
+          "name": "D mixolydian backing track",
+          "track": {
+            "name":"D mixolydian backing track.mp3",
+            "markers": []
+          },
+          "patches": [
+            {
+              "name": "PLINI",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 484,
+                "scene": 8
+              }
+            }
+          ]
+        },
+        {
+          "name": "Deep Dramatic Ballad Guitar Backing Track Jam in A Minor",
+          "track": {
+            "name":"Deep Dramatic Ballad Guitar Backing Track Jam in A Minor.mp3",
+            "markers": []
+          },
+          "patches": [
+            {
+              "name": "PLINI",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 484,
+                "scene": 8
+              }
+            }
+          ]
+        },
+        {
+          "name": "Deep Passionate Ballad Guitar Backing Track Jam in C Minor",
+          "track": {
+            "name":"Deep Passionate Ballad Guitar Backing Track Jam in C Minor.mp3",
+            "markers": []
+          },
+          "patches": [
+            {
+              "name": "PLINI",
+              "axeFx2": null,
+              "axeFx3": {
+                "number": 484,
+                "scene": 8
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "Nursery Cryme",
       "songs": [
         {

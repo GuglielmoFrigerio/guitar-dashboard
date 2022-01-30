@@ -218,6 +218,10 @@ struct SongView: View, PedalboardTargetProtocol {
         .padding(.horizontal)
     }
     
+    private func colorForRow(patch: Patch) -> Color {
+        return patch.index == self.selected ? Color(red: 0.1367, green: 0.3437, blue: 0.5976) : ((patch.index % 2) == 0 ? Color.black : Color(red: 0.1, green: 0.1, blue: 0.1))
+    }
+    
     
     init(_ song: Song) {
         self.song = song
@@ -232,7 +236,8 @@ struct SongView: View, PedalboardTargetProtocol {
                 List() {
                     ForEach(song.patches, id: \.self) { patch in
                         PatchView(patch: patch, selectedPatch: self.$selected).id(patch.index)
-                            .background(patch.index == self.selected ? Color.indigo : Color.black)
+                            .background(self.colorForRow(patch: patch))
+                            .listRowBackground(self.colorForRow(patch: patch))
                     }
                 }
                 .navigationTitle(song.name)
