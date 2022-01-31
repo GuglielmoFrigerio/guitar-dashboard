@@ -7,11 +7,13 @@
 
 import Foundation
 import CoreMIDI
+import os
 
 struct MidiOutputPort {
     var midiPortRef = MIDIPortRef()
     let midiEndpointRef: MIDIEndpointRef
-    
+    let logger: Logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "MidiOutputPort")
+
     init (midiClientRef: MIDIClientRef, portName: String, destinationIndex: Int) throws {
         let status = MIDIOutputPortCreate(midiClientRef, portName as CFString, &midiPortRef)
         
@@ -23,7 +25,8 @@ struct MidiOutputPort {
     }
     
     func sendProgramChange(channel: UInt8, program: UInt8) throws {
-        
+        logger.info("sendProgramChange: channel: \(channel) program: \(program)")
+
         var packet: MIDIPacket = MIDIPacket();
         packet.timeStamp = 0;
         packet.length = 3;
@@ -39,6 +42,8 @@ struct MidiOutputPort {
     }
     
     func sendControlChange(channel: UInt8, control: UInt8, value: UInt8) throws {
+        logger.info("sendControlChange: channel: \(channel) control: \(control) value: \(value)")
+        
         var packet: MIDIPacket = MIDIPacket();
         packet.timeStamp = 0;
         packet.length = 3;
@@ -54,7 +59,26 @@ struct MidiOutputPort {
 
     }
     
+    func sendBankSelect(channel: UInt8, bankNumber: UInt8) throws {
+        logger.info("sendBankSelect: channel: \(channel) bankNumber: \(bankNumber)")
+
+        var packet: MIDIPacket = MIDIPacket();
+        packet.timeStamp = 0;
+        packet.length = 3;
+        packet.data.0 = 0xB0 + channel;
+        packet.data.1 = 0;
+        packet.data.2 = bankNumber;
+
+        var packetList:MIDIPacketList = MIDIPacketList(numPackets: 1, packet: packet);
+        let status = MIDISend(midiPortRef, midiEndpointRef, &packetList)
+        if status != noErr {
+            throw MidiError.MidiOperationFailed(errorCode: status, functionName: "MIDISend")
+        }
+    }
+    
     func sendbankAndProgram(channel: UInt8, bankNumber: UInt8, programNumber: UInt8) throws {
+        logger.info("sendbankAndProgram: channel: \(channel) bankNumber: \(bankNumber) programNumber: \(programNumber)")
+        
         var packet: MIDIPacket = MIDIPacket();
         packet.timeStamp = 0;
         packet.length = 6;

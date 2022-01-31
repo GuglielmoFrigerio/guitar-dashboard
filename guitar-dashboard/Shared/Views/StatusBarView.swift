@@ -13,7 +13,7 @@ struct StatusBarView: View {
     
     var body: some View {
         HStack {
-            Image(systemName: "keyboard").opacity(false ? 1.0 : 0.2)
+            Image(systemName: "keyboard").opacity(viewModel.isAxeFx2Connected ? 1.0 : 0.2)
             Image(systemName: "keyboard.badge.ellipsis").opacity(viewModel.isAxeFx3Connected ? 1.0 : 0.2)
         }
         .onAppear {

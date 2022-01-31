@@ -9,16 +9,19 @@ import Foundation
 import os
 
 class DevicesManager: DeviceManagerProtocol {
+    
     private let libraryModels: [LibraryModel]
     var libraries: [Library] = []
     let midiFactory: MidiFactory?
     var axeFx3Device: FractalDevice? = nil
+    var axeFx2Device: FractalDevice? = nil
     var pedalBoard: Pedalboard? = nil
     let logger: Logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "DevicesManager")
     var pedalboardKeySubscriber: ((PedalboardKey) -> Void)? = nil
     var endpointMonitor: MidiEndpointMonitor? = nil
     private var onAxeFx3StatusChange: ((Bool) -> Void)? = nil
-    
+    private var onAxeFx2StatusChange: ((Bool) -> Void)? = nil
+
     private func pedalSourceInputAvailable(inputPort: MidiInputPort) {
         pedalBoard = Pedalboard(midiInputPort: inputPort, keyListener: pedalboardKeyHandler)
     }
@@ -101,11 +104,21 @@ class DevicesManager: DeviceManagerProtocol {
             endpointMonitor?.subscribeDestination(name: "Axe-Fx III") {
                 midiOutputPort in
                 if let uwMidiOutputPort = midiOutputPort {
-                    self.axeFx3Device = FractalDevice(midiOutputPort: uwMidiOutputPort, deviceName: "Axe-Fx III")
+                    self.axeFx3Device = FractalDevice(midiOutputPort: uwMidiOutputPort, deviceName: "Axe-Fx III", type: .axefx3)
                     self.onAxeFx3StatusChange?(true)
                 } else {
                     self.axeFx3Device = nil
                     self.onAxeFx3StatusChange?(false)
+                }
+            }
+            endpointMonitor?.subscribeDestination(name: "USB MIDI Interface") {
+                midiOutputPort in
+                if let uwMidiOutputPort = midiOutputPort {
+                    self.axeFx2Device = FractalDevice(midiOutputPort: uwMidiOutputPort, deviceName: "Axe-Fx II", type: .axefx2)
+                    self.onAxeFx2StatusChange?(true)
+                } else {
+                    self.axeFx2Device = nil
+                    self.onAxeFx2StatusChange?(false)
                 }
             }
         }
@@ -135,6 +148,13 @@ class DevicesManager: DeviceManagerProtocol {
                 logger.warning("Unable to send patch to AxeFx3 device")                
             }
         }
+        if let uwAxeFx2Device = self.axeFx2Device, let uwAxeFx2Patch = patch.axeFx2 {
+            do {
+                try uwAxeFx2Device.send(programScene: uwAxeFx2Patch)
+            } catch {
+                logger.warning("Unable to send patch to AxeFx2 device")
+            }
+        }
     }
     
     func subscribePedalboard(onPedalboardKey: @escaping (PedalboardKey) -> Void) {
@@ -145,14 +165,49 @@ class DevicesManager: DeviceManagerProtocol {
         pedalboardKeySubscriber = nil
     }
     
+    func testProgramChange(_ programNunber: Int) {
+        do {
+            try axeFx2Device?.midiOutputPort.sendProgramChange(channel: 0, program: UInt8(programNunber))
+        }
+        catch {
+        }
+    }
+    
+    func testBankSelect(_ bankNumber: Int) {
+        do {
+            try axeFx2Device?.midiOutputPort.sendBankSelect(channel: 0, bankNumber: UInt8(bankNumber))
+        }
+        catch {
+            
+        }
+    }
+    
+    func testSceneChange(_ sceneNumber: Int) {
+        do {
+            try axeFx2Device?.midiOutputPort.sendControlChange(channel: 0, control: 34, value: UInt8(sceneNumber))
+        }
+        catch {
+            
+        }
+    }
+    
     @inlinable public func onAxeFx3StatusChange(perform action: ((Bool) -> Void)? = nil) {
         self.onAxeFx3StatusChange = action
     }
     
+    @inlinable public func onAxeFx2StatusChange(perform action: ((Bool) -> Void)? = nil) {
+        self.onAxeFx2StatusChange = action
+    }
+
     var isAxeFx3Connected: Bool {
         get {
             return self.axeFx3Device != nil
         }
     }
-
+    
+    var isAxeFx2Connected: Bool {
+        get {
+            return self.axeFx2Device != nil
+        }
+    }
 }

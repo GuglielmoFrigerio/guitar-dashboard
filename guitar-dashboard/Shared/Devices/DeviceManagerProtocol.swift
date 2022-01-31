@@ -17,4 +17,7 @@ protocol DeviceManagerProtocol {
     
     var isAxeFx3Connected: Bool { get }
     func onAxeFx3StatusChange(perform action: ((Bool) -> Void)?)
+    
+    var isAxeFx2Connected: Bool { get }
+    func onAxeFx2StatusChange(perform action: ((Bool) -> Void)?)
 }
