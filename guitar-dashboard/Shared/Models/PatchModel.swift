@@ -11,4 +11,5 @@ struct PatchModel: Decodable {
     let name: String?
     let axeFx2: ProgramModel?
     let axeFx3: ProgramModel?
+    var message: String?
 }

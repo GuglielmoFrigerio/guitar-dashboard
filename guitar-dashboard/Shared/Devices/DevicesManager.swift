@@ -110,8 +110,10 @@ class DevicesManager: DeviceManagerProtocol {
             }
         }
         
-        for libMode in libraryModels {
-            self.libraries.append(Library(libMode, self))
+        for libModel in libraryModels {
+            if libModel.isEnabled {
+                self.libraries.append(Library(libModel, self))
+            }
         }
         
         midiFactory?.onSetupChanged {

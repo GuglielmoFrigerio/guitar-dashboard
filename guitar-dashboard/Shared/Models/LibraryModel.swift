@@ -6,8 +6,19 @@
 //
 
 import Foundation
+import UIKit
 
-struct LibraryModel: Decodable {
+class LibraryModel: Decodable {
+    private var enabled: Bool?
     let name: String
     let songs: [SongModel]
+    
+    var isEnabled: Bool {
+        get {
+            if let uwenabled = enabled {
+                return uwenabled
+            }
+            return true
+        }
+    }
 }

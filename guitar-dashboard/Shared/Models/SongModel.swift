@@ -10,5 +10,15 @@ import Foundation
 struct SongModel: Decodable {
     let name: String
     let track: TrackModel
-    let patches: [PatchModel]    
+    let patches: [PatchModel]
+    private var enabled: Bool?
+    
+    var isEnabled: Bool {
+        get {
+            if let uwenabled = enabled {
+                return uwenabled
+            }
+            return true
+        }
+    }
 }

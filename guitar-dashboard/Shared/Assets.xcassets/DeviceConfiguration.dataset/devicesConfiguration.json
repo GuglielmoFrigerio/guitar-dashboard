@@ -15,7 +15,7 @@
               "name": "PLINI",
               "axeFx2": null,
               "axeFx3": {
-                "number": 484,
+                "number": 376,
                 "scene": 8
               }
             }
@@ -32,7 +32,7 @@
               "name": "PLINI",
               "axeFx2": null,
               "axeFx3": {
-                "number": 484,
+                "number": 376,
                 "scene": 8
               }
             }
@@ -59,6 +59,7 @@
     },
     {
       "name": "Nursery Cryme",
+      "enabled": false,
       "songs": [
         {
           "name": "The Musical Box",
@@ -97,6 +98,7 @@
     },
     {
       "name": "Foxtrot",
+      "enabled": false,
       "songs": [
         {
           "name": "Watcher Of The Skies",
@@ -148,6 +150,7 @@
     },
     {
       "name": "Selling England by the Pound",
+      "enabled": false,
       "songs": [
         {
           "name": "Dancing with the Moonlit Knight",
@@ -329,6 +332,7 @@
     },
     {
       "name": "The Lamb Lies Down",
+      "enabled": false,
       "songs": [
         {
           "name": "The Lamia",
@@ -379,7 +383,7 @@
       ]
     },
     {
-      "name": "Agosto 2021",
+      "name": "The Lambs",
       "songs": [
         {
           "name": "Get\u0027em Out By Friday",
@@ -1006,6 +1010,7 @@
         },
         {
           "name": "Dancing 110",
+          "enabled": false,
           "track": {
             "name": "Dancing 110.mp3",
             "markers": [
@@ -1096,6 +1101,7 @@
         },
         {
           "name": "Dancing 100",
+          "enabled": false,
           "track": {
             "name": "Dancing 100.mp3",
             "markers": [
@@ -1324,7 +1330,8 @@
               "axeFx3": {
                 "number": 475,
                 "scene": 1
-              }
+              },
+              "message": "Pedale Espressione Al Minimo!"
             },
             {
               "name": "-12",
@@ -1332,7 +1339,8 @@
               "axeFx3": {
                 "number": 508,
                 "scene": 2
-              }
+              },
+              "message": "Esempio secondo messaggio!"
             },
             {
               "name": "\u002B12",

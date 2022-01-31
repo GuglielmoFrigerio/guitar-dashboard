@@ -14,10 +14,12 @@ struct Patch: Hashable, Identifiable {
     let id = UUID()
     let index: Int
     private let deviceManager: DeviceManagerProtocol
+    private let message: String?
 
     init(_ patchModel: PatchModel, index: Int, deviceManager: DeviceManagerProtocol) {
         self.index = index
         self.deviceManager = deviceManager
+        self.message = patchModel.message
         if let uwName = patchModel.name {
             self.name = uwName
         } else {
@@ -39,7 +41,11 @@ struct Patch: Hashable, Identifiable {
         hasher.combine(index)
     }
     
-    func select() {
+    func select() -> String {
         self.deviceManager.send(patch: self)
+        if let uwMessage = self.message {
+            return uwMessage
+        }
+        return ""
     }
 }

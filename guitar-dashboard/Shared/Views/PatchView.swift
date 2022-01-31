@@ -18,11 +18,6 @@ struct PatchView: View {
             Text(patch.name)
                 .frame(maxWidth: .infinity)
                 .font(.system(size: 45))
-//            Spacer()
-//            if patch.index == selectedPatch {
-//                Image(systemName: "checkmark")
-//                    .foregroundColor(.accentColor)
-//            }
         }
         .onTapGesture {
             self.selectedPatch = patch.index

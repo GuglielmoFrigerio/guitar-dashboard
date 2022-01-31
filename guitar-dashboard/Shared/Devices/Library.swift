@@ -15,7 +15,9 @@ class Library: Hashable {
     init(_ libraryModel: LibraryModel, _ deviceManager: DeviceManagerProtocol) {
         self.name = libraryModel.name
         for songModel in libraryModel.songs {
-            songs.append(Song(songModel, deviceManager))
+            if songModel.isEnabled {
+                songs.append(Song(songModel, deviceManager))
+            }
         }
     }
     

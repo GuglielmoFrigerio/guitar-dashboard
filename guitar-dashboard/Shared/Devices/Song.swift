@@ -38,8 +38,8 @@ class Song: Hashable {
         hasher.combine(name)
     }
     
-    func selectPatch(index: Int) {
-        self.patches[index].select()
+    func selectPatch(index: Int) -> String {
+        return self.patches[index].select()
     }
     
     func activate(pedalboardTarget: PedalboardTargetProtocol) {

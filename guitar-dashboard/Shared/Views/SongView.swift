@@ -12,6 +12,7 @@ struct SongView: View, PedalboardTargetProtocol {
     let song: Song
     @State private var selected : Int? = 0
     @StateObject var viewModel: SongViewModel = SongViewModel()
+    @State var patchMessage: String = ""
     let logger: Logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "SongView")
     
     private func prevPatch() {
@@ -242,19 +243,20 @@ struct SongView: View, PedalboardTargetProtocol {
                 }
                 .navigationTitle(song.name)
                 .onChange(of: selected) { value in
-                    self.song.selectPatch(index: value!)
+                    self.patchMessage = self.song.selectPatch(index: value!)
                     scrollViewReader.scrollTo(selected)
                 }
                 .listStyle(SidebarListStyle())
             }
-            patchView
+            PatchMessageView(message: self.patchMessage)
+//            patchView
             playerView
         }
         .onAppear {
             viewModel.setTrackName(self.song.trackName)
             self.song.activate(pedalboardTarget: self)
             if let index = self.selected {
-                self.song.selectPatch(index: index)
+                self.patchMessage = self.song.selectPatch(index: index)
             }
         }
         .onDisappear {

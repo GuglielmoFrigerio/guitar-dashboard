@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BF060B4127A6A8B900BA7761 /* PedalboardTargetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF060B4027A6A8B900BA7761 /* PedalboardTargetProtocol.swift */; };
 		BF060B4227A6A8B900BA7761 /* PedalboardTargetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF060B4027A6A8B900BA7761 /* PedalboardTargetProtocol.swift */; };
+		BF060B4427A7088800BA7761 /* PatchMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF060B4327A7088800BA7761 /* PatchMessageView.swift */; };
+		BF060B4527A7088800BA7761 /* PatchMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF060B4327A7088800BA7761 /* PatchMessageView.swift */; };
 		BF1F67C12790A701003BA412 /* MidiEndpointCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F67C02790A701003BA412 /* MidiEndpointCollection.swift */; };
 		BF1F67C22790A701003BA412 /* MidiEndpointCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F67C02790A701003BA412 /* MidiEndpointCollection.swift */; };
 		BF1F67CA2792DE88003BA412 /* guitar_dashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F67C92792DE88003BA412 /* guitar_dashboardTests.swift */; };
@@ -142,6 +144,7 @@
 
 /* Begin PBXFileReference section */
 		BF060B4027A6A8B900BA7761 /* PedalboardTargetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalboardTargetProtocol.swift; sourceTree = "<group>"; };
+		BF060B4327A7088800BA7761 /* PatchMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchMessageView.swift; sourceTree = "<group>"; };
 		BF1F67C02790A701003BA412 /* MidiEndpointCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiEndpointCollection.swift; sourceTree = "<group>"; };
 		BF1F67C72792DE88003BA412 /* guitar-dashboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "guitar-dashboardTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1F67C92792DE88003BA412 /* guitar_dashboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guitar_dashboardTests.swift; sourceTree = "<group>"; };
@@ -334,6 +337,7 @@
 				BFBD967827884C02003EC3FF /* PatchView.swift */,
 				BFBD967927884C02003EC3FF /* SongView.swift */,
 				BF60152027A58A2B00393D77 /* StatusBarView.swift */,
+				BF060B4327A7088800BA7761 /* PatchMessageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -668,6 +672,7 @@
 				BFCE1E742788452300E4C482 /* ContentView.swift in Sources */,
 				BF553647278E03AA00E0770C /* MidiEndpointMonitor.swift in Sources */,
 				BFBD966E27884B8C003EC3FF /* Song.swift in Sources */,
+				BF060B4427A7088800BA7761 /* PatchMessageView.swift in Sources */,
 				BFBD967027884B8C003EC3FF /* Patch.swift in Sources */,
 				BFBD965927884B5A003EC3FF /* SongModel.swift in Sources */,
 				BFE4F77127A2D8A600F8FBC1 /* TrackLoaderProtocol.swift in Sources */,
@@ -725,6 +730,7 @@
 				BFCE1E752788452300E4C482 /* ContentView.swift in Sources */,
 				BF553648278E03AA00E0770C /* MidiEndpointMonitor.swift in Sources */,
 				BFBD966F27884B8C003EC3FF /* Song.swift in Sources */,
+				BF060B4527A7088800BA7761 /* PatchMessageView.swift in Sources */,
 				BFBD967127884B8C003EC3FF /* Patch.swift in Sources */,
 				BFBD965A27884B5A003EC3FF /* SongModel.swift in Sources */,
 				BFE4F77227A2D8A600F8FBC1 /* TrackLoaderProtocol.swift in Sources */,
