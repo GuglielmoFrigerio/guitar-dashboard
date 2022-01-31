@@ -315,6 +315,10 @@ class SongViewModel: NSObject, ObservableObject {
         setupAudio(trackName: trackName)
     }
     
+    func setVolume(_ newVolume: Float) {
+        self.engine.mainMixerNode.outputVolume = newVolume / 70.0
+    }
+    
     let allPlaybackRates: [PlaybackValue] = [
         .init(value: 0.8, label: "0.8x"),
         .init(value: 0.85, label: "0.85x"),

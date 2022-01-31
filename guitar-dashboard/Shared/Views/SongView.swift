@@ -13,6 +13,7 @@ struct SongView: View, PedalboardTargetProtocol {
     @State private var selected : Int? = 0
     @StateObject var viewModel: SongViewModel = SongViewModel()
     @State var patchMessage: String = ""
+    @State private var volume: Float = 70.0
     let logger: Logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "SongView")
     
     private func prevPatch() {
@@ -188,6 +189,23 @@ struct SongView: View, PedalboardTargetProtocol {
             .font(.system(size: 32))
             
             Spacer()
+            VStack {
+                Slider(value: Binding(get: {
+                    self.volume
+                }, set: { newVolume in
+                    self.volume = newVolume
+                    viewModel.setVolume(newVolume)
+                }), in: 0.0...100.0, step: 1.0) {
+                    Text("Speed")
+                } minimumValueLabel: {
+                    Text("0")
+                } maximumValueLabel: {
+                    Text("100")
+                }
+                
+                .frame(width: 250)
+                Text("\(Int(volume))")
+            }
         }
         .foregroundColor(.primary)
         .padding(.vertical, 20)
