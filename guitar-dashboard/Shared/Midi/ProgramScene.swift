@@ -13,7 +13,14 @@ struct ProgramScene {
     
     init(programNumber: Int, sceneNumber: Int) {
         self.programNumber = programNumber
-        self.sceneNumber = sceneNumber
+        if sceneNumber == 0 {
+            self.sceneNumber = 1
+        }
+        else if sceneNumber > 8 {
+            self.sceneNumber = 8
+        } else {
+            self.sceneNumber = sceneNumber
+        }            
     }
     
     init() {

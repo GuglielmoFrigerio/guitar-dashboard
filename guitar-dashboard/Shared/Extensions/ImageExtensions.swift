@@ -9,4 +9,5 @@ extension Image {
     static let backward = Image(systemName: "gobackward.10")
     static let prevPatch = Image(systemName: "backward")
     static let nextPatch = Image(systemName: "forward")
+    static let record = Image(systemName: "record.circle")
 }

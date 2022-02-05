@@ -18,6 +18,7 @@ class SongViewModel: NSObject, ObservableObject {
     private let logger: Logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "SongViewModel")
     
     private var audioFile: AVAudioFile?
+    private var recordFile: AVAudioFile?
     private var audioSampleRate: Double = 0
     private var audioLengthSeconds: Double = 0
     
@@ -149,6 +150,16 @@ class SongViewModel: NSObject, ObservableObject {
     }
     
     private func setupAudio(trackName: String) {
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.interruptSpokenAudioAndMixWithOthers)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            logger.warning("Unable to setup AVAudioSession shared instance")
+        }
+        
+        discoverInput()
+        
         let parts = trackName.parseFilename()
         let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let fileURL = URL(fileURLWithPath: parts.0, relativeTo: directoryURL).appendingPathExtension(parts.1)
@@ -259,6 +270,46 @@ class SongViewModel: NSObject, ObservableObject {
         
     }
     
+    private func discoverInput() {
+        let audioSession = AVAudioSession.sharedInstance()
+        let not = audioSession.isInputAvailable ? "" : "not"
+        logger.info("input is \(not) available")
+        if let availInputs = audioSession.availableInputs {
+            logger.info("There are  \(availInputs.count) input(s) available")
+            for input in availInputs {
+                logger.info("input port name is \(input.portName) ")
+                if input.portName == "Axe-Fx III" {
+                    do {
+                        try audioSession.setPreferredInput(input)
+                        if let dataSources = audioSession.inputDataSources {
+                            logger.info("there are \(dataSources.count) data sources")
+                            for ds in dataSources {
+                                logger.info("data source name is \(ds.dataSourceName)")
+                            }
+                        }
+                    } catch {
+                        logger.warning("setPreferredInput failed")
+                    }
+                }
+            }
+            
+        }
+    }
+    
+    func dateFormatTime(date : Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MMM-yyyy.hh.mm.ss"
+        return dateFormatter.string(from: date)
+    }
+    
+    func recordBlock(buffer: AVAudioPCMBuffer, time: AVAudioTime) {
+        do {
+            try recordFile?.write(from: buffer)
+        } catch {
+            logger.warning("AVAudioFile.write failed")
+        }
+    }
+    
     var stoppable: Bool {
         get {
             return currentPosition > 0
@@ -317,6 +368,35 @@ class SongViewModel: NSObject, ObservableObject {
     
     func setVolume(_ newVolume: Float) {
         self.engine.mainMixerNode.outputVolume = newVolume / 70.0
+    }
+    
+    func startRecording() {
+        let recordFilename = dateFormatTime(date: Date())
+        let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let recordFileURL = URL(fileURLWithPath: recordFilename, relativeTo: directoryURL).appendingPathExtension("wav")
+        
+        do {
+            let recordFile = try AVAudioFile(forWriting: recordFileURL, settings: engine.inputNode.inputFormat(forBus: 0).settings)
+            self.recordFile = recordFile
+            
+            let outputFormat = engine.mainMixerNode.outputFormat(forBus: 0)
+            logger.info(" outputFormat samplerate: \(outputFormat.sampleRate), channel count: \(outputFormat.channelCount)")
+            
+            let inputFormat = engine.inputNode.inputFormat(forBus: 0)
+            let recordPermission = AVAudioSession.sharedInstance().recordPermission
+            logger.info("inputFormat samplerate: \(inputFormat.sampleRate), channel count: \(inputFormat.channelCount) ")
+                        
+            engine.inputNode.installTap(onBus: 0, bufferSize: 1024, format: engine.mainMixerNode.outputFormat(forBus: 0), block: recordBlock)
+         } catch {
+            logger.warning("AVAudioFile failed")
+        }
+
+    }
+    
+    func stopRecording() {
+        if let uwRecordFile = self.recordFile {
+            engine.inputNode.removeTap(onBus: 0)
+        }        
     }
     
     let allPlaybackRates: [PlaybackValue] = [

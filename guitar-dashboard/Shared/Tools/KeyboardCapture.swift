@@ -8,23 +8,6 @@
 import Foundation
 import SwiftUI
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-    var window: UIWindow?
-
-    override var canBecomeFirstResponder: Bool {
-        return true;
-    }
-    override var keyCommands: [UIKeyCommand]? {
-        return [
-            UIKeyCommand(input: "a", modifierFlags: [], action: #selector(test)),
-            UIKeyCommand(input: UIKeyCommand.inputLeftArrow, modifierFlags: [], action: #selector(test))
-        ]
-    }
-
-    @objc func test(_ sender: UIKeyCommand) {
-        print("test was pressed")
-    }
-}
 
 class KeyTestController<Content>: UIHostingController<Content> where Content: View {
 

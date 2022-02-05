@@ -267,8 +267,8 @@ struct SongView: View, PedalboardTargetProtocol {
                 .listStyle(SidebarListStyle())
             }
             PatchMessageView(message: self.patchMessage)
-//            patchView
             playerView
+            RecorderView(viewModel: self.viewModel)
         }
         .onAppear {
             viewModel.setTrackName(self.song.trackName)
