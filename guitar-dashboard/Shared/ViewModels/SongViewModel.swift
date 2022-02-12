@@ -152,14 +152,22 @@ class SongViewModel: NSObject, ObservableObject {
     private func setupAudio(trackName: String) {
         
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.interruptSpokenAudioAndMixWithOthers)
-            try AVAudioSession.sharedInstance().setActive(true)
+            let audioSession = AVAudioSession.sharedInstance()
+            try audioSession.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.interruptSpokenAudioAndMixWithOthers)
+            try audioSession.setActive(true)
+            audioSession.requestRecordPermission {
+                granted in
+                self.logger.info("requestRecordPermission: \(granted)")
+            }
+            
         } catch {
             logger.warning("Unable to setup AVAudioSession shared instance")
         }
-        
+
+        discoverOutput()
         discoverInput()
-        
+//        startRecording()
+
         let parts = trackName.parseFilename()
         let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let fileURL = URL(fileURLWithPath: parts.0, relativeTo: directoryURL).appendingPathExtension(parts.1)
@@ -268,6 +276,17 @@ class SongViewModel: NSObject, ObservableObject {
             }
         }
         
+    }
+    
+    private func discoverOutput() {
+        let audioSession = AVAudioSession.sharedInstance()
+        if let outputDataSources = audioSession.outputDataSources {
+            self.logger.info("output data source count: \(outputDataSources.count)")
+            for ods in outputDataSources {
+                self.logger.info("output data source name: \(ods.dataSourceName)")
+            }
+        }
+
     }
     
     private func discoverInput() {

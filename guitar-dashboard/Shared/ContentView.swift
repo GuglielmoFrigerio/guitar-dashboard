@@ -40,6 +40,9 @@ struct ContentView: View {
                     NavigationLink(destination: MidiPortsView()) {
                         Text("List Midi Ports")
                     }
+                    NavigationLink(destination: KeyboardView()) {
+                        Text("Keyboard View")
+                    }
                 }
     //            .navigationBarTitle("Libraries")
             }

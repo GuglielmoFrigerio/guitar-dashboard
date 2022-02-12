@@ -11,6 +11,7 @@
 		BF060B4227A6A8B900BA7761 /* PedalboardTargetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF060B4027A6A8B900BA7761 /* PedalboardTargetProtocol.swift */; };
 		BF060B4427A7088800BA7761 /* PatchMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF060B4327A7088800BA7761 /* PatchMessageView.swift */; };
 		BF060B4527A7088800BA7761 /* PatchMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF060B4327A7088800BA7761 /* PatchMessageView.swift */; };
+		BF0DEED527AF07E000BF7C7E /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0DEED427AF07E000BF7C7E /* KeyboardViewController.swift */; };
 		BF1F67C12790A701003BA412 /* MidiEndpointCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F67C02790A701003BA412 /* MidiEndpointCollection.swift */; };
 		BF1F67C22790A701003BA412 /* MidiEndpointCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F67C02790A701003BA412 /* MidiEndpointCollection.swift */; };
 		BF1F67CA2792DE88003BA412 /* guitar_dashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F67C92792DE88003BA412 /* guitar_dashboardTests.swift */; };
@@ -28,6 +29,8 @@
 		BF60152227A58A2B00393D77 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60152027A58A2B00393D77 /* StatusBarView.swift */; };
 		BF60152527A59DB100393D77 /* StatusBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60152427A59DB100393D77 /* StatusBarViewModel.swift */; };
 		BF60152627A59DB100393D77 /* StatusBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60152427A59DB100393D77 /* StatusBarViewModel.swift */; };
+		BF7ED7AF27B7A3BF0014B81B /* KeyboardControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7ED7AE27B7A3BF0014B81B /* KeyboardControllerWrapper.swift */; };
+		BF7ED7B127B7A9240014B81B /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7ED7B027B7A9240014B81B /* KeyboardView.swift */; };
 		BFAEADAC278B363100466ADE /* MidiPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEADAB278B363100466ADE /* MidiPacket.swift */; };
 		BFAEADAD278B363100466ADE /* MidiPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEADAB278B363100466ADE /* MidiPacket.swift */; };
 		BFBD962A27884A35003EC3FF /* DIContainerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBD962927884A35003EC3FF /* DIContainerProtocol.swift */; };
@@ -116,8 +119,6 @@
 		BFE4F77527A2D91200F8FBC1 /* TrackLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4F77327A2D91200F8FBC1 /* TrackLoader.swift */; };
 		BFE4F77727A2DA3B00F8FBC1 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4F77627A2DA3B00F8FBC1 /* StringExtensions.swift */; };
 		BFE4F77827A2DA3B00F8FBC1 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4F77627A2DA3B00F8FBC1 /* StringExtensions.swift */; };
-		BFE4F77A27A3226500F8FBC1 /* KeyboardCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4F77927A3226500F8FBC1 /* KeyboardCapture.swift */; };
-		BFE4F77B27A3226500F8FBC1 /* KeyboardCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4F77927A3226500F8FBC1 /* KeyboardCapture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,7 @@
 /* Begin PBXFileReference section */
 		BF060B4027A6A8B900BA7761 /* PedalboardTargetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedalboardTargetProtocol.swift; sourceTree = "<group>"; };
 		BF060B4327A7088800BA7761 /* PatchMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchMessageView.swift; sourceTree = "<group>"; };
+		BF0DEED427AF07E000BF7C7E /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		BF1F67C02790A701003BA412 /* MidiEndpointCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiEndpointCollection.swift; sourceTree = "<group>"; };
 		BF1F67C72792DE88003BA412 /* guitar-dashboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "guitar-dashboardTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1F67C92792DE88003BA412 /* guitar_dashboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = guitar_dashboardTests.swift; sourceTree = "<group>"; };
@@ -158,6 +160,8 @@
 		BF553646278E03AA00E0770C /* MidiEndpointMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiEndpointMonitor.swift; sourceTree = "<group>"; };
 		BF60152027A58A2B00393D77 /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
 		BF60152427A59DB100393D77 /* StatusBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarViewModel.swift; sourceTree = "<group>"; };
+		BF7ED7AE27B7A3BF0014B81B /* KeyboardControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardControllerWrapper.swift; sourceTree = "<group>"; };
+		BF7ED7B027B7A9240014B81B /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		BFAEADAB278B363100466ADE /* MidiPacket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiPacket.swift; sourceTree = "<group>"; };
 		BFBD962927884A35003EC3FF /* DIContainerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIContainerProtocol.swift; sourceTree = "<group>"; };
 		BFBD962D27884AA0003EC3FF /* ProgramScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramScene.swift; sourceTree = "<group>"; };
@@ -209,7 +213,6 @@
 		BFE4F77027A2D8A600F8FBC1 /* TrackLoaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackLoaderProtocol.swift; sourceTree = "<group>"; };
 		BFE4F77327A2D91200F8FBC1 /* TrackLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackLoader.swift; sourceTree = "<group>"; };
 		BFE4F77627A2DA3B00F8FBC1 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		BFE4F77927A3226500F8FBC1 /* KeyboardCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardCapture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +254,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF0DEED127AF066C00BF7C7E /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				BF0DEED427AF07E000BF7C7E /* KeyboardViewController.swift */,
+				BF7ED7AE27B7A3BF0014B81B /* KeyboardControllerWrapper.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		BF1F67C82792DE88003BA412 /* guitar-dashboardTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,7 +286,6 @@
 				BFBD962927884A35003EC3FF /* DIContainerProtocol.swift */,
 				BFE4F77027A2D8A600F8FBC1 /* TrackLoaderProtocol.swift */,
 				BFE4F77327A2D91200F8FBC1 /* TrackLoader.swift */,
-				BFE4F77927A3226500F8FBC1 /* KeyboardCapture.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -342,6 +353,7 @@
 				BF60152027A58A2B00393D77 /* StatusBarView.swift */,
 				BF060B4327A7088800BA7761 /* PatchMessageView.swift */,
 				BF31BB6327AD5E3C0095231C /* RecorderView.swift */,
+				BF7ED7B027B7A9240014B81B /* KeyboardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -379,6 +391,7 @@
 		BFCE1E442788452100E4C482 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				BF0DEED127AF066C00BF7C7E /* UIKit */,
 				BF60152327A59D7700393D77 /* ViewModels */,
 				BFC09CCB279C23CA0052A728 /* Tracks */,
 				BFC09CC4279C180F0052A728 /* Extensions */,
@@ -636,13 +649,13 @@
 				BF36A892279D72620090C0A0 /* PlaybackValue.swift in Sources */,
 				BFBD968327884C02003EC3FF /* SongView.swift in Sources */,
 				BFBD963C27884AA0003EC3FF /* MidiFactory.swift in Sources */,
-				BFE4F77A27A3226500F8FBC1 /* KeyboardCapture.swift in Sources */,
 				BFBD967D27884C02003EC3FF /* ListLabView.swift in Sources */,
 				BF060B4127A6A8B900BA7761 /* PedalboardTargetProtocol.swift in Sources */,
 				BF60152527A59DB100393D77 /* StatusBarViewModel.swift in Sources */,
 				BFBD966827884B8C003EC3FF /* DeviceManagerProtocol.swift in Sources */,
 				BFBD965127884B5A003EC3FF /* ProgramModel.swift in Sources */,
 				BFCE1E722788452300E4C482 /* guitar_dashboardApp.swift in Sources */,
+				BF0DEED527AF07E000BF7C7E /* KeyboardViewController.swift in Sources */,
 				BFC09CC6279C18280052A728 /* ImageExtensions.swift in Sources */,
 				BFCE1E762788452300E4C482 /* Persistence.swift in Sources */,
 				BF31BB6427AD5E3C0095231C /* RecorderView.swift in Sources */,
@@ -653,6 +666,7 @@
 				BFC09CC2279B25FE0052A728 /* SongViewModel.swift in Sources */,
 				BF60152127A58A2B00393D77 /* StatusBarView.swift in Sources */,
 				BFCE1E702788452300E4C482 /* guitar_dashboard.xcdatamodeld in Sources */,
+				BF7ED7AF27B7A3BF0014B81B /* KeyboardControllerWrapper.swift in Sources */,
 				BFBD965727884B5A003EC3FF /* LibraryModel.swift in Sources */,
 				BFBD965527884B5A003EC3FF /* Entity.swift in Sources */,
 				BFBD964627884AA0003EC3FF /* MidiInputPort.swift in Sources */,
@@ -668,6 +682,7 @@
 				BFBD966A27884B8C003EC3FF /* Pedalboard.swift in Sources */,
 				BFBD964427884AA0003EC3FF /* FractalDeviceProtocol.swift in Sources */,
 				BFBD965D27884B5A003EC3FF /* TrackModel.swift in Sources */,
+				BF7ED7B127B7A9240014B81B /* KeyboardView.swift in Sources */,
 				BFBD963E27884AA0003EC3FF /* MidiFactoryProtocol.swift in Sources */,
 				BFC09CC9279C187E0052A728 /* ColorExtensions.swift in Sources */,
 				BFE4F77427A2D91200F8FBC1 /* TrackLoader.swift in Sources */,
@@ -695,7 +710,6 @@
 				BF36A893279D72620090C0A0 /* PlaybackValue.swift in Sources */,
 				BFBD968427884C02003EC3FF /* SongView.swift in Sources */,
 				BFBD963D27884AA0003EC3FF /* MidiFactory.swift in Sources */,
-				BFE4F77B27A3226500F8FBC1 /* KeyboardCapture.swift in Sources */,
 				BFBD967E27884C02003EC3FF /* ListLabView.swift in Sources */,
 				BF060B4227A6A8B900BA7761 /* PedalboardTargetProtocol.swift in Sources */,
 				BF60152627A59DB100393D77 /* StatusBarViewModel.swift in Sources */,
@@ -947,6 +961,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "guitar-dashboard--iOS--Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "To record The Lambs performances";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -979,6 +994,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "guitar-dashboard--iOS--Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "To record The Lambs performances";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

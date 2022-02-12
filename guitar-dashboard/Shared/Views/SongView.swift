@@ -269,6 +269,7 @@ struct SongView: View, PedalboardTargetProtocol {
             PatchMessageView(message: self.patchMessage)
             playerView
             RecorderView(viewModel: self.viewModel)
+            KeyboardControllerWrapper()
         }
         .onAppear {
             viewModel.setTrackName(self.song.trackName)

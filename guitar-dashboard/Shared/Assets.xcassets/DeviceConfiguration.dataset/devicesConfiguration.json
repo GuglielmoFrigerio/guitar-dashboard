@@ -33,7 +33,10 @@
           "patches": [
             {
               "name": "PLINI",
-              "axeFx2": null,
+              "axeFx2": {
+                  "number": 63,
+                  "scene": 1
+              },
               "axeFx3": {
                 "number": 376,
                 "scene": 8
@@ -50,9 +53,12 @@
           "patches": [
             {
               "name": "PLINI",
-              "axeFx2": null,
+              "axeFx2": {
+                  "number": 63,
+                  "scene": 1
+              },
               "axeFx3": {
-                "number": 484,
+                "number": 376,
                 "scene": 8
               }
             }
@@ -1001,7 +1007,8 @@
               "axeFx3": {
                 "number": 456,
                 "scene": 1
-              }
+              },
+              "message": "Pedale Espressione Al Massimo!"
             },
             {
               "name": "Tapping",
@@ -1044,7 +1051,7 @@
               }
             },
             {
-              "name": null,
+              "name": "Reprise",
               "axeFx2": null,
               "axeFx3": {
                 "number": 459,
@@ -1052,7 +1059,7 @@
               }
             },
             {
-              "name": null,
+              "name": "Clean Mid Pickup",
               "axeFx2": null,
               "axeFx3": {
                 "number": 456,
@@ -1400,8 +1407,7 @@
               "axeFx3": {
                 "number": 508,
                 "scene": 2
-              },
-              "message": "Esempio secondo messaggio!"
+              }
             },
             {
               "name": "\u002B12",
