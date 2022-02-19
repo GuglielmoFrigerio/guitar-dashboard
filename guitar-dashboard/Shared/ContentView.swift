@@ -43,6 +43,9 @@ struct ContentView: View {
                     NavigationLink(destination: KeyboardView()) {
                         Text("Keyboard View")
                     }
+                    NavigationLink(destination: FretboardView()) {
+                        Text("Fretboard View")
+                    }
                 }
     //            .navigationBarTitle("Libraries")
             }

@@ -119,6 +119,7 @@
 		BFE4F77527A2D91200F8FBC1 /* TrackLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4F77327A2D91200F8FBC1 /* TrackLoader.swift */; };
 		BFE4F77727A2DA3B00F8FBC1 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4F77627A2DA3B00F8FBC1 /* StringExtensions.swift */; };
 		BFE4F77827A2DA3B00F8FBC1 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4F77627A2DA3B00F8FBC1 /* StringExtensions.swift */; };
+		BFF76CAF27B7B7E0003CBFD0 /* FretboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF76CAE27B7B7E0003CBFD0 /* FretboardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +214,7 @@
 		BFE4F77027A2D8A600F8FBC1 /* TrackLoaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackLoaderProtocol.swift; sourceTree = "<group>"; };
 		BFE4F77327A2D91200F8FBC1 /* TrackLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackLoader.swift; sourceTree = "<group>"; };
 		BFE4F77627A2DA3B00F8FBC1 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		BFF76CAE27B7B7E0003CBFD0 /* FretboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretboardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -354,6 +356,7 @@
 				BF060B4327A7088800BA7761 /* PatchMessageView.swift */,
 				BF31BB6327AD5E3C0095231C /* RecorderView.swift */,
 				BF7ED7B027B7A9240014B81B /* KeyboardView.swift */,
+				BFF76CAE27B7B7E0003CBFD0 /* FretboardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 				BFBD967227884B8C003EC3FF /* Library.swift in Sources */,
 				BFBD964227884AA0003EC3FF /* MidiOutputPort.swift in Sources */,
 				BF36A892279D72620090C0A0 /* PlaybackValue.swift in Sources */,
+				BFF76CAF27B7B7E0003CBFD0 /* FretboardView.swift in Sources */,
 				BFBD968327884C02003EC3FF /* SongView.swift in Sources */,
 				BFBD963C27884AA0003EC3FF /* MidiFactory.swift in Sources */,
 				BFBD967D27884C02003EC3FF /* ListLabView.swift in Sources */,

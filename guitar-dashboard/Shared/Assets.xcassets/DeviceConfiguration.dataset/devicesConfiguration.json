@@ -63,6 +63,46 @@
               }
             }
           ]
+        },
+        {
+          "name": "51 Legato Exercises",
+          "track": {
+            "name":"51mll_backing_track.mp3",
+            "markers": []
+          },
+          "patches": [
+            {
+              "name": "PLINI",
+              "axeFx2": {
+                  "number": 63,
+                  "scene": 1
+              },
+              "axeFx3": {
+                "number": 376,
+                "scene": 8
+              }
+            }
+          ]
+        },
+        {
+          "name": "Mantovanelli Legato Intemediate",
+          "track": {
+            "name":"lm_legatomasterclass_Int_fullbacking.mp3",
+            "markers": []
+          },
+          "patches": [
+            {
+              "name": "PLINI",
+              "axeFx2": {
+                  "number": 63,
+                  "scene": 1
+              },
+              "axeFx3": {
+                "number": 376,
+                "scene": 8
+              }
+            }
+          ]
         }
       ]
     },
