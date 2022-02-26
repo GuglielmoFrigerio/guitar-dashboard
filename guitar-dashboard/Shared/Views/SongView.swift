@@ -157,7 +157,7 @@ struct SongView: View, PedalboardTargetProtocol {
             }
             .frame(width: 40)
             .font(.system(size: 45))
-            .disabled(!viewModel.isPlaying)
+            .disabled(!viewModel.stoppable)
             .keyboardShortcut("d", modifiers: [.command])
             
             Spacer()

@@ -337,12 +337,18 @@ class SongViewModel: NSObject, ObservableObject {
     
     func stop() {
         isPlaying = false
-        if player.isPlaying {
-            displayLink?.isPaused = true
-            disconnectVolumeTap()
+        displayLink?.isPaused = true
+        disconnectVolumeTap()
 
-            player.stop()
-        }
+        player.stop()
+        self.playerProgress = 0.0
+        
+        playerTime = PlayerTime(
+            elapsedTime: 0.0,
+            remainingTime: audioLengthSeconds
+        )
+        
+        currentPosition = 0
     }
     
     func skip(forwards: Bool) {
