@@ -39,6 +39,9 @@ class Song: Hashable {
     }
     
     func selectPatch(index: Int) -> String {
+        if index != self.currentSelection {
+            self.currentSelection = index
+        }
         return self.patches[index].select()
     }
     
