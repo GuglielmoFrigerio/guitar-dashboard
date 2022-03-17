@@ -152,6 +152,10 @@ class SongViewModel: NSObject, ObservableObject {
     private func setupAudio(trackName: String) {
         
         do {
+            
+            let inputFormat = engine.inputNode.inputFormat(forBus: 0)
+            logger.info("inputFormat samplerate: \(inputFormat.sampleRate), channel count: \(inputFormat.channelCount) ")
+
             let audioSession = AVAudioSession.sharedInstance()
             try audioSession.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.interruptSpokenAudioAndMixWithOthers)
             try audioSession.setActive(true)
@@ -166,7 +170,6 @@ class SongViewModel: NSObject, ObservableObject {
 
         discoverOutput()
         discoverInput()
-//        startRecording()
 
         let parts = trackName.parseFilename()
         let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -321,14 +324,6 @@ class SongViewModel: NSObject, ObservableObject {
         return dateFormatter.string(from: date)
     }
     
-    func recordBlock(buffer: AVAudioPCMBuffer, time: AVAudioTime) {
-        do {
-            try recordFile?.write(from: buffer)
-        } catch {
-            logger.warning("AVAudioFile.write failed")
-        }
-    }
-    
     var stoppable: Bool {
         get {
             return currentPosition > 0
@@ -399,19 +394,20 @@ class SongViewModel: NSObject, ObservableObject {
         let recordFilename = dateFormatTime(date: Date())
         let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let recordFileURL = URL(fileURLWithPath: recordFilename, relativeTo: directoryURL).appendingPathExtension("wav")
+        logger.info("recordFilename \(recordFilename)")
         
         do {
-            let recordFile = try AVAudioFile(forWriting: recordFileURL, settings: engine.inputNode.inputFormat(forBus: 0).settings)
+            let inputFormat = engine.inputNode.inputFormat(forBus: 0)
+            let recordFile = try AVAudioFile(forWriting: recordFileURL, settings: inputFormat.settings)
             self.recordFile = recordFile
             
             let outputFormat = engine.mainMixerNode.outputFormat(forBus: 0)
             logger.info(" outputFormat samplerate: \(outputFormat.sampleRate), channel count: \(outputFormat.channelCount)")
             
-            let inputFormat = engine.inputNode.inputFormat(forBus: 0)
             let recordPermission = AVAudioSession.sharedInstance().recordPermission
             logger.info("inputFormat samplerate: \(inputFormat.sampleRate), channel count: \(inputFormat.channelCount) ")
-                        
-            engine.inputNode.installTap(onBus: 0, bufferSize: 1024, format: engine.mainMixerNode.outputFormat(forBus: 0), block: recordBlock)
+                                
+            engine.inputNode.installTap(onBus: 0, bufferSize: 1024, format: inputFormat, block: recordBlock)
          } catch {
             logger.warning("AVAudioFile failed")
         }
@@ -421,7 +417,16 @@ class SongViewModel: NSObject, ObservableObject {
     func stopRecording() {
         if let uwRecordFile = self.recordFile {
             engine.inputNode.removeTap(onBus: 0)
-        }        
+            self.recordFile = nil
+        }
+    }
+    
+    func recordBlock(buffer: AVAudioPCMBuffer, time: AVAudioTime) {
+        do {
+            try recordFile?.write(from: buffer)
+        } catch {
+            logger.warning("AVAudioFile.write failed. stride: \(buffer.stride)")
+        }
     }
     
     let allPlaybackRates: [PlaybackValue] = [

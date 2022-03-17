@@ -43,6 +43,17 @@ class DevicesManager: DeviceManagerProtocol {
         }
     }
     
+    private func getfileSize(path: String) -> UInt64 {
+        do {
+            let fileAttribute = try FileManager.default.attributesOfItem(atPath: path)
+            return fileAttribute[FileAttributeKey.size] as! UInt64
+
+        } catch let error as NSError {
+            logger.warning("attributesOfItem failed \(error.localizedDescription)")
+            return 0
+        }
+    }
+    
     private func logDocumentDirectory() {
         let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         
@@ -53,7 +64,6 @@ class DevicesManager: DeviceManagerProtocol {
             }
 
         } catch {
-            logger.warning("contentsOfDirectory failed")
         }
     }
     
@@ -136,7 +146,7 @@ class DevicesManager: DeviceManagerProtocol {
         
         endpointMonitor?.update()
         
-//        loadTracks()
+        //loadTracks()
         logDocumentDirectory()
     }
     
